@@ -307,7 +307,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                 features={["Smart Inventory", "Expiry Alerts", "Credit Books"]}
               />
               <VerticalCard 
-                img="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&q=80&w=1000"
+                img="https://imgs.search.brave.com/yxKAY9BZ3o9GGg9kBTYtzjChzXCGEDWm6B1A9HZS4YI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucGV4ZWxzLmNv/bS9waG90b3MvMzE0/MDY4OTkvcGV4ZWxz/LXBob3RvLTMxNDA2/ODk5L2ZyZWUtcGhv/dG8tb2YtcGluay1h/bmQtd2hpdGUtY2Fw/c3VsZXMtc3BpbGxl/ZC1mcm9tLWJvdHRs/ZS5qcGVnP2F1dG89/Y29tcHJlc3MmY3M9/dGlueXNyZ2ImZHBy/PTEmdz01MDA"
                 title="Pharmacy"
                 icon={<CheckCircle2 className="w-5 h-5 text-white" />}
                 features={["Batch Tracking", "Drug Schedule", "GST Compliance"]}
