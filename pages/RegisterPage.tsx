@@ -1,11 +1,19 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Lock, User as UserIcon, Briefcase, Loader2, CheckCircle2, ShieldCheck } from 'lucide-react';
+// Import User and Role types
+import { User, Role } from '../types';
 
 const INFOSYS_LOGO = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/250px-Infosys_logo.svg.png";
 const STREAMLIT_URL = "https://bizsight-ai---business-intelligence-platform.streamlit.app/";
 
-export const RegisterPage: React.FC = () => {
+// Define props for RegisterPage
+interface RegisterPageProps {
+  onRegister: (userData: User) => void;
+}
+
+export const RegisterPage: React.FC<RegisterPageProps> = ({ onRegister }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,6 +31,16 @@ export const RegisterPage: React.FC = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
+      
+      // Update app state before redirecting
+      onRegister({
+        id: Math.random().toString(),
+        name: formData.name,
+        email: formData.email,
+        role: formData.role as Role,
+        businessId: 'new_biz'
+      });
+
       setTimeout(() => {
         window.location.href = STREAMLIT_URL;
       }, 1500);

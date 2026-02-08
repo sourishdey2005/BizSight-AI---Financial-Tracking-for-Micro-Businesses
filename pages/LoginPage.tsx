@@ -1,10 +1,18 @@
+
 import React, { useState } from 'react';
 import { Mail, Lock, LogIn, Loader2, CheckCircle2, TrendingUp } from 'lucide-react';
+// Import User type
+import { User } from '../types';
 
 const INFOSYS_LOGO = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/250px-Infosys_logo.svg.png";
 const STREAMLIT_URL = "https://bizsight-ai---business-intelligence-platform.streamlit.app/";
 
-export const LoginPage: React.FC = () => {
+// Define props for LoginPage
+interface LoginPageProps {
+  onLogin: (userData: User) => void;
+}
+
+export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,6 +26,15 @@ export const LoginPage: React.FC = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
+      
+      // Call onLogin to update app state
+      onLogin({
+        id: '1',
+        name: 'Rahul Sharma',
+        email: email,
+        role: 'Owner',
+        businessId: 'biz_123'
+      });
       
       // Load in same window
       window.location.href = STREAMLIT_URL;
