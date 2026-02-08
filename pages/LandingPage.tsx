@@ -271,7 +271,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
               <div className="relative animate-reveal delay-200">
                 <div className="absolute -inset-10 bg-blue-100 rounded-[4rem] blur-[80px] opacity-40"></div>
                 <img 
-                  src="https://imgs.search.brave.com/tN_0c9AbezVii2gs028P-WWUJlIGc2VC4tq58DD-IfI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZmFzdGVyY2FwaXRh/bC5jb20vaS9CdXNp/bmVzcy1hbmFseXRp/Y3MtLURhdGEtVmlz/dWFsaXphdGlvbi0t/RGF0YS1WaXN1YWxp/emF0aW9uLS1QYWlu/dGluZy1hLVBpY3R1/cmUtd2l0aC1CdXNp/bmVzcy1BbmFseXRp/Y3MtLVRoZS1BcnQt/b2YtVHVybmluZy1E/YXRhLWludG8tSW5z/aWdodC53ZWJw" 
+                  src="https://imgs.search.brave.com/66o45MHqubE9a7p3_RgyodbzZnDELa6p9VDQ-s5aFLQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sZWFy/bmluZ2xhYmIuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI0/LzA4LzUtNC0xMDI0/eDUzNi5wbmc" 
                   alt="Business Analytics Visualization" 
                   className="relative rounded-[3rem] shadow-2xl border border-slate-100 object-cover w-full aspect-square"
                 />
