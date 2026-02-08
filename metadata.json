@@ -1,0 +1,7 @@
+{
+  "name": "BizSight AI - Financial Tracking for Micro-Businesses",
+  "description": "A modern, fintech-inspired financial management platform for small businesses featuring transaction logging, inventory management, AI forecasting, and business intelligence integration.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
