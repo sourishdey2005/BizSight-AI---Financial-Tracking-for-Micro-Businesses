@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Mail, Lock, LogIn, Loader2, CheckCircle2, TrendingUp } from 'lucide-react';
 
 const INFOSYS_LOGO = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/250px-Infosys_logo.svg.png";
@@ -15,16 +14,14 @@ export const LoginPage: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate high-end auth handshake
+    // Simulate auth handshake
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
       
-      // Professional delay before external redirect
-      setTimeout(() => {
-        window.location.href = STREAMLIT_URL;
-      }, 1500);
-    }, 2000);
+      // Load in same window
+      window.location.href = STREAMLIT_URL;
+    }, 1500);
   };
 
   return (
@@ -37,7 +34,7 @@ export const LoginPage: React.FC = () => {
             Intelligent tracking <br />for the modern seller.
           </h1>
           <p className="text-blue-100 text-lg max-w-md">
-            BizSight AI transforms raw data into actionable insights, helping thousands of micro-businesses scale faster.
+            BizSight AI transforms raw data into actionable insights, helping thousands of Indian sellers scale faster.
           </p>
         </div>
 
@@ -54,7 +51,6 @@ export const LoginPage: React.FC = () => {
           <p className="text-sm text-blue-100">Across verified BizSight businesses in Q3 2024.</p>
         </div>
 
-        {/* Decorative elements */}
         <div className="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
       </div>
 
@@ -83,7 +79,7 @@ export const LoginPage: React.FC = () => {
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="animate-reveal delay-100">
-                  <label className="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
+                  <label className="block text-sm font-bold text-slate-700 mb-2">Work Email</label>
                   <div className="relative group">
                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
                     <input 
@@ -93,7 +89,7 @@ export const LoginPage: React.FC = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       disabled={isSubmitting}
                       className="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-2xl focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all shadow-sm"
-                      placeholder="name@business.com"
+                      placeholder="rahul@kirana.com"
                     />
                   </div>
                 </div>
@@ -132,7 +128,7 @@ export const LoginPage: React.FC = () => {
 
               <div className="mt-10 pt-10 border-t border-slate-200 text-center animate-reveal delay-300">
                 <p className="text-sm text-slate-500 font-medium">
-                  Don't have an account yet? <Link to="/register" className="text-blue-600 font-bold hover:underline">Create a Business Profile</Link>
+                  Don't have an account? <a href={STREAMLIT_URL} className="text-blue-600 font-bold hover:underline">Get Started</a>
                 </p>
               </div>
             </>
@@ -140,7 +136,7 @@ export const LoginPage: React.FC = () => {
         </div>
 
         <footer className="absolute bottom-8 left-0 right-0 text-center">
-            <p className="text-xs text-slate-400 font-medium">
+            <p className="text-xs text-slate-400 font-bold">
               Architected by <a href="https://sourishdeyportfolio.vercel.app/" className="text-slate-600 hover:text-blue-600 transition underline decoration-dotted">Sourish Dey</a>
             </p>
         </footer>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Building2, Globe, DollarSign, Clock, Save } from 'lucide-react';
 
@@ -19,7 +18,7 @@ export const BusinessProfile: React.FC = () => {
                 <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                 <input 
                   type="text" 
-                  defaultValue="Sunny Side Hardware" 
+                  defaultValue="Sharma Kirana Store" 
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition"
                 />
               </div>
@@ -41,10 +40,9 @@ export const BusinessProfile: React.FC = () => {
               <div className="relative">
                 <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                 <select className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition appearance-none">
-                  <option>USD ($)</option>
                   <option>INR (₹)</option>
+                  <option>USD ($)</option>
                   <option>EUR (€)</option>
-                  <option>GBP (£)</option>
                 </select>
               </div>
             </div>
@@ -53,8 +51,8 @@ export const BusinessProfile: React.FC = () => {
               <div className="relative">
                 <Clock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                 <select className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition appearance-none">
-                  <option>(GMT-08:00) Pacific Time</option>
                   <option>(GMT+05:30) India Standard Time</option>
+                  <option>(GMT-08:00) Pacific Time</option>
                   <option>(GMT+00:00) London</option>
                   <option>(GMT+09:00) Tokyo</option>
                 </select>
@@ -63,12 +61,12 @@ export const BusinessProfile: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-slate-700 mb-2">Website (Optional)</label>
+            <label className="block text-sm font-bold text-slate-700 mb-2">GSTIN (Optional)</label>
             <div className="relative">
-              <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+              <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
               <input 
-                type="url" 
-                placeholder="https://example.com"
+                type="text" 
+                placeholder="07AAAAA0000A1Z5"
                 className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition"
               />
             </div>
@@ -80,14 +78,6 @@ export const BusinessProfile: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
-
-      <div className="bg-rose-50 p-8 rounded-3xl border border-rose-100">
-        <h3 className="text-lg font-bold text-rose-900 mb-2">Danger Zone</h3>
-        <p className="text-rose-700 text-sm mb-6">Deleting this business will permanently remove all transaction history and inventory data. This action cannot be undone.</p>
-        <button className="px-6 py-2 bg-rose-600 text-white rounded-lg font-bold hover:bg-rose-700 transition text-sm">
-          Delete Business
-        </button>
       </div>
     </div>
   );

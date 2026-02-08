@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, Activity, Settings as SettingsIcon, ShieldCheck } from 'lucide-react';
 
@@ -16,8 +15,8 @@ export const AdminPanel: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <AdminStat cardTitle="Total Users" value="1,452" trend="+12% this month" icon={<Users className="text-blue-600" />} />
-        <AdminStat cardTitle="Active Businesses" value="840" trend="+5% this month" icon={<Activity className="text-emerald-600" />} />
+        <AdminStat cardTitle="Total Sellers" value="1,452" trend="+12% this month" icon={<Users className="text-blue-600" />} />
+        <AdminStat cardTitle="Active Stores" value="840" trend="+5% this month" icon={<Activity className="text-emerald-600" />} />
         <AdminStat cardTitle="API Uptime" value="99.98%" trend="Operational" icon={<SettingsIcon className="text-slate-600" />} />
       </div>
 
@@ -27,10 +26,10 @@ export const AdminPanel: React.FC = () => {
         </div>
         <div className="p-6">
           <div className="space-y-6">
-            <ActivityLogItem user="John Doe" action="Created new business profile" time="2 mins ago" />
-            <ActivityLogItem user="Sarah Smith" action="Exported annual tax summary" time="15 mins ago" />
+            <ActivityLogItem user="Rahul Sharma" action="Created new business profile" time="2 mins ago" />
+            <ActivityLogItem user="Priya Patel" action="Exported annual tax summary" time="15 mins ago" />
             <ActivityLogItem user="Tech Store Inc" action="Logged 100+ transactions via API" time="1 hour ago" />
-            <ActivityLogItem user="Mike Ross" action="Role updated to Accountant" time="3 hours ago" />
+            <ActivityLogItem user="Amit Verma" action="Role updated to Accountant" time="3 hours ago" />
           </div>
         </div>
       </div>

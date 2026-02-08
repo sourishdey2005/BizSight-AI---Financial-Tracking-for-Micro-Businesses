@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Plus, Search, Filter, Download, Trash2, Edit2, FileImage } from 'lucide-react';
 import { Transaction } from '../../types';
@@ -6,10 +5,10 @@ import { Transaction } from '../../types';
 export const Transactions: React.FC = () => {
   const [showForm, setShowForm] = useState(false);
   const [transactions, setTransactions] = useState<Transaction[]>([
-    { id: '1', type: 'Sale', amount: 150.00, category: 'Hardware', date: '2023-11-01', notes: 'Sold 3 hammers' },
-    { id: '2', type: 'Expense', amount: 45.00, category: 'Marketing', date: '2023-11-02', notes: 'Facebook ads' },
-    { id: '3', type: 'Sale', amount: 200.00, category: 'Services', date: '2023-11-03', notes: 'Consultation fee' },
-    { id: '4', type: 'Expense', amount: 1200.00, category: 'Rent', date: '2023-11-01', notes: 'Office space' },
+    { id: '1', type: 'Sale', amount: 4500.00, category: 'Hardware', date: '2023-11-01', notes: 'Sold 5 LED Bulbs' },
+    { id: '2', type: 'Expense', amount: 1500.00, category: 'Marketing', date: '2023-11-02', notes: 'Google My Business Ads' },
+    { id: '3', type: 'Sale', amount: 8000.00, category: 'Services', date: '2023-11-03', notes: 'AC Repair Service' },
+    { id: '4', type: 'Expense', amount: 15000.00, category: 'Rent', date: '2023-11-01', notes: 'Shop Rent Nov' },
   ]);
 
   const [newTx, setNewTx] = useState<Partial<Transaction>>({
@@ -74,7 +73,7 @@ export const Transactions: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Amount</label>
+                  <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Amount (₹)</label>
                   <input 
                     type="number" required
                     className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
@@ -103,10 +102,11 @@ export const Transactions: React.FC = () => {
                 >
                   <option>Rent</option>
                   <option>Utilities</option>
-                  <option>Supplies</option>
-                  <option>Marketing</option>
+                  <option>Inventory</option>
+                  <option>Staff Salary</option>
                   <option>Hardware</option>
                   <option>Services</option>
+                  <option>GST Payment</option>
                   <option>Miscellaneous</option>
                 </select>
               </div>
@@ -115,7 +115,7 @@ export const Transactions: React.FC = () => {
                 <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Notes</label>
                 <textarea 
                   className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 min-h-[100px]"
-                  placeholder="Optional details..."
+                  placeholder="Details about the transaction..."
                   value={newTx.notes}
                   onChange={(e) => setNewTx({...newTx, notes: e.target.value})}
                 ></textarea>
@@ -125,7 +125,7 @@ export const Transactions: React.FC = () => {
                 <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Receipt Upload</label>
                 <div className="border-2 border-dashed border-slate-200 rounded-xl p-6 flex flex-col items-center justify-center text-slate-400 hover:text-blue-500 hover:border-blue-200 cursor-pointer transition">
                   <FileImage className="w-8 h-8 mb-2" />
-                  <span className="text-sm">Click to upload or drag image</span>
+                  <span className="text-sm">Click to upload bill image</span>
                 </div>
               </div>
 
@@ -182,7 +182,7 @@ export const Transactions: React.FC = () => {
                   </td>
                   <td className="px-6 py-4 font-bold text-sm">
                     <span className={tx.type === 'Sale' ? 'text-emerald-600' : 'text-rose-600'}>
-                      {tx.type === 'Sale' ? '+' : '-'}${tx.amount.toFixed(2)}
+                      {tx.type === 'Sale' ? '+' : '-'}₹{tx.amount.toLocaleString('en-IN')}
                     </span>
                   </td>
                   <td className="px-6 py-4">

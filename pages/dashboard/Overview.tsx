@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   TrendingUp, 
@@ -32,10 +31,10 @@ const data = [
 ];
 
 const categoryData = [
-  { name: 'Supplies', value: 400, color: '#3b82f6' },
-  { name: 'Rent', value: 300, color: '#1d4ed8' },
-  { name: 'Utilities', value: 200, color: '#60a5fa' },
-  { name: 'Marketing', value: 150, color: '#93c5fd' },
+  { name: 'Inventory', value: 4000, color: '#3b82f6' },
+  { name: 'Rent', value: 3000, color: '#1d4ed8' },
+  { name: 'Electricity', value: 2000, color: '#60a5fa' },
+  { name: 'Staff', value: 1500, color: '#93c5fd' },
 ];
 
 export const Overview: React.FC = () => {
@@ -49,7 +48,7 @@ export const Overview: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard 
           label="Total Sales" 
-          value="$12,450.00" 
+          value="₹1,24,450" 
           change="+12.5%" 
           trend="up" 
           icon={<TrendingUp className="text-emerald-600" />}
@@ -57,7 +56,7 @@ export const Overview: React.FC = () => {
         />
         <StatCard 
           label="Total Expenses" 
-          value="$5,240.50" 
+          value="₹52,240" 
           change="-2.1%" 
           trend="down" 
           icon={<TrendingDown className="text-rose-600" />}
@@ -65,7 +64,7 @@ export const Overview: React.FC = () => {
         />
         <StatCard 
           label="Net Profit" 
-          value="$7,209.50" 
+          value="₹72,210" 
           change="+8.4%" 
           trend="up" 
           icon={<Wallet className="text-blue-600" />}
@@ -103,6 +102,7 @@ export const Overview: React.FC = () => {
                 <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} />
                 <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} />
                 <Tooltip 
+                  formatter={(value) => `₹${value}`}
                   contentStyle={{borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)'}}
                 />
                 <Area type="monotone" dataKey="sales" stroke="#3b82f6" strokeWidth={3} fillOpacity={1} fill="url(#colorSales)" />
@@ -119,7 +119,7 @@ export const Overview: React.FC = () => {
               <BarChart data={categoryData} layout="vertical">
                 <XAxis type="number" hide />
                 <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} />
-                <Tooltip cursor={{fill: 'transparent'}} />
+                <Tooltip cursor={{fill: 'transparent'}} formatter={(value) => `₹${value}`} />
                 <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={20}>
                   {categoryData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
@@ -135,7 +135,7 @@ export const Overview: React.FC = () => {
                   <div className="w-2 h-2 rounded-full" style={{backgroundColor: cat.color}}></div>
                   <span>{cat.name}</span>
                 </div>
-                <span className="font-semibold text-slate-900">${cat.value}</span>
+                <span className="font-semibold text-slate-900">₹{cat.value}</span>
               </div>
             ))}
           </div>
