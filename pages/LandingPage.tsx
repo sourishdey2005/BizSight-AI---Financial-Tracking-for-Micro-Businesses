@@ -239,7 +239,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                   description="Log complex transactions in under 2 seconds with enterprise-grade consistency. Optimized for high-frequency retail."
                 />
                 <FeatureCard 
-                  image="https://images.unsplash.com/photo-1512428559083-a401a30c9d75?auto=format&fit=crop&q=80&w=1000"
+                  image="https://imgs.search.brave.com/tnU0YgAP6-ctJXj66KAtPxv3f9JwrQs5lAx2Tl03QD4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/em9ob3dlYnN0YXRp/Yy5jb20vc2l0ZXMv/endlYi9pbWFnZXMv/YW5hbHl0aWNzL2Rh/c2hib2FyZC1hcHAt/aWxsdXN0cmF0aW9u/LnBuZw"
                   icon={<Smartphone className="text-emerald-600" />}
                   title="Mobile Intelligence"
                   description="Real-time access to critical metrics from anywhere. High-fidelity interface optimized for Android and iOS."
@@ -271,7 +271,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
               <div className="relative animate-reveal delay-200">
                 <div className="absolute -inset-10 bg-blue-100 rounded-[4rem] blur-[80px] opacity-40"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1551288049-bbda48658a7d?auto=format&fit=crop&q=80&w=1200" 
+                  src="https://imgs.search.brave.com/tN_0c9AbezVii2gs028P-WWUJlIGc2VC4tq58DD-IfI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZmFzdGVyY2FwaXRh/bC5jb20vaS9CdXNp/bmVzcy1hbmFseXRp/Y3MtLURhdGEtVmlz/dWFsaXphdGlvbi0t/RGF0YS1WaXN1YWxp/emF0aW9uLS1QYWlu/dGluZy1hLVBpY3R1/cmUtd2l0aC1CdXNp/bmVzcy1BbmFseXRp/Y3MtLVRoZS1BcnQt/b2YtVHVybmluZy1E/YXRhLWludG8tSW5z/aWdodC53ZWJw" 
                   alt="Business Analytics Visualization" 
                   className="relative rounded-[3rem] shadow-2xl border border-slate-100 object-cover w-full aspect-square"
                 />
@@ -313,13 +313,13 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                 features={["Batch Tracking", "Drug Schedule", "GST Compliance"]}
               />
               <VerticalCard 
-                img="https://images.unsplash.com/photo-1530124566582-a618bc2615ad?auto=format&fit=crop&q=80&w=1000"
+                img="https://imgs.search.brave.com/dOymDuMfZGevM8b020gpBGS1g0NTCWktnvgNxXp5H9I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZHlubWVkaWEtMS5t/aWNyb3NvZnQuY29t/L2lzL2ltYWdlL21p/Y3Jvc29mdGNvcnAv/UmVzb3VyY2VzX0dl/dHRpbmdTdGFydGVk/XzI_cmVzTW9kZT1z/aGFycDImb3BfdXNt/PTEuNSwwLjY1LDE1/LDAmd2lkPTIwMDAm/cWx0PTg1JmZpdD1j/b25zdHJhaW4"
                 title="Hardware"
                 icon={<Briefcase className="w-5 h-5 text-white" />}
                 features={["SKU Variations", "Bulk Orders", "Project Estimator"]}
               />
               <VerticalCard 
-                img="https://images.unsplash.com/photo-1454165833767-02a698d48769?auto=format&fit=crop&q=80&w=1000"
+                img="https://imgs.search.brave.com/PkJYkJiowGezjO2_hts5Gv-6DHhajXIHvbwFpiRYNdY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS12/ZWN0b3IvY3VzdG9t/ZXItc2VydmljZS1o/b3RsaW5lLW9wZXJh/dG9ycy1jb25zdWx0/LTI2MG53LTE5MjYy/ODY5MTYuanBn"
                 title="Services"
                 icon={<Briefcase className="w-5 h-5 text-white" />}
                 features={["Appointment Sync", "Invoice Builder", "Service History"]}
@@ -496,7 +496,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                       </div>
                       <div className="flex flex-col">
                         <span className="text-4xl font-black text-slate-900 leading-tight">Sourish Dey</span>
-                        <span className="text-base font-black text-slate-400 uppercase tracking-[0.3em] mt-4">Principal Product Engineer</span>
+                        <span className="text-base font-black text-slate-400 uppercase tracking-[0.3em] mt-4">Intern</span>
                         <div className="mt-10 flex items-center gap-4 text-base font-black text-blue-600 uppercase tracking-tighter hover:gap-6 transition-all">
                           Explore Full Master Portfolio <ArrowRight className="w-6 h-6" />
                         </div>
