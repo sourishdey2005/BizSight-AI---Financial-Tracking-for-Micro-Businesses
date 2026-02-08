@@ -23,8 +23,7 @@ import {
 } from 'lucide-react';
 import { User } from '../types';
 
-const INFOSYS_LOGO = "https://imgs.search.brave.com/ub6igt8xl2B8ypkP8h91JVhAUG_UBccUb32iQExvrn8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Zm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi85Lzk1L0lu/Zm9zeXNfbG9nby5z/dmcvMjUwcHgtSW5m/b3N5c19sb2dvLnN2/Zy5wbmc";
-const TOP_BANNER_IMAGE = "https://res.cloudinary.com/dodhvvewu/image/upload/v1770584790/9783222e98b0d5141519b41e7203ff9a_pyjqit.webp";
+const BUILDER_LOGO = "https://res.cloudinary.com/dodhvvewu/image/upload/v1770584790/9783222e98b0d5141519b41e7203ff9a_pyjqit.webp";
 const STREAMLIT_URL = "https://bizsight-ai---business-intelligence-platform.streamlit.app/";
 const PORTFOLIO_URL = "https://sourishdeyportfolio.vercel.app/";
 
@@ -55,9 +54,12 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
       <div className="bg-slate-50 py-2 px-4 border-b border-slate-100 relative z-[70]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-3">
-             <img src="https://imgs.search.brave.com/ub6igt8xl2B8ypkP8h91JVhAUG_UBccUb32iQExvrn8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi85Lzk1L0lu/Zm9zeXNfbG9nby5z/dmcvMjUwcHgtSW5m/b3N5c19sb2dvLnN2/Zy5wbmc" alt="Infosys" className="h-3 opacity-60" />
+             <div className="flex items-center gap-2">
+               <span className="text-[7px] font-black text-slate-400 uppercase tracking-widest">Built by</span>
+               <img src={BUILDER_LOGO} alt="Builder Logo" className="h-4 w-4 rounded-md object-contain" />
+             </div>
              <div className="h-3 w-px bg-slate-200 hidden sm:block"></div>
-             <p className="text-[7px] font-black text-slate-400 uppercase tracking-[0.2em] hidden sm:block">Official Strategic Partner</p>
+             <p className="text-[7px] font-black text-slate-400 uppercase tracking-[0.2em] hidden sm:block">Strategic Intelligence Partner</p>
           </div>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5 text-[7px] font-black text-emerald-600 uppercase tracking-widest">
@@ -73,7 +75,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
       {/* Main Navigation */}
       <nav className="sticky top-0 w-full glass z-50 border-b border-slate-100 transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-12 flex items-center justify-between">
-          <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+          <div className="flex items-center gap-2.5 group cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <div className="p-1 bg-blue-600 rounded-lg group-hover:scale-110 transition-transform shadow-lg shadow-blue-200">
               <BarChart3 className="text-white w-3 h-3" />
             </div>
@@ -110,13 +112,9 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
       <main>
         {/* Hero Section */}
         <section className="relative pt-16 pb-12 px-4 overflow-hidden">
-          {/* Shifted Image to Corner Top */}
-          <div className="absolute top-0 right-0 w-48 md:w-64 lg:w-96 -mr-16 -mt-8 pointer-events-none opacity-30 rotate-6 animate-float z-0">
-            <img 
-              src={TOP_BANNER_IMAGE} 
-              alt="" 
-              className="rounded-[2rem] shadow-2xl border border-slate-200/50"
-            />
+          {/* Builder Logo Decoration */}
+          <div className="absolute top-0 right-0 w-32 h-32 -mr-8 -mt-8 pointer-events-none opacity-10 rotate-12 z-0">
+            <img src={BUILDER_LOGO} alt="" className="w-full h-full object-contain" />
           </div>
 
           <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -130,7 +128,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
             </h1>
             
             <p className="text-[10px] md:text-[11px] text-slate-500 max-w-lg mx-auto mb-8 font-medium leading-relaxed animate-reveal delay-200">
-              High-precision transactional tracking and growth forecasting designed for the modern Indian micro-enterprise. Empowered by Infosys tech standards.
+              High-precision transactional tracking and growth forecasting designed for the modern Indian micro-enterprise. Engineered for excellence.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 animate-reveal delay-300">
@@ -218,44 +216,6 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
           </div>
         </section>
 
-        {/* AI & Forecasting */}
-        <section id="analytics" className="py-16 bg-slate-900 relative overflow-hidden">
-           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-blue-600/5 rounded-full blur-[80px]"></div>
-           <div className="max-w-5xl mx-auto px-4 relative z-10">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                 <div className="animate-reveal">
-                    <div className="inline-flex p-1.5 bg-blue-500 rounded-md mb-5">
-                       <Brain className="text-white w-4 h-4" />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-black text-white mb-3 leading-tight tracking-tight">AI Forecasting for <br /><span className="text-blue-400">Bharat's Growth.</span></h3>
-                    <p className="text-blue-100/70 text-[10px] leading-relaxed mb-6 font-medium">
-                       Optimized models analyzing seasonal cycles like Diwali and wedding peaks to predict stock velocity.
-                    </p>
-                    <button 
-                      onClick={navigateToStreamlit}
-                      className="group bg-white text-slate-900 px-5 py-2.5 rounded-lg font-black text-[9px] uppercase tracking-widest flex items-center gap-2 hover:bg-blue-400 hover:text-white transition-all active:scale-95"
-                    >
-                       View Forecasts <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                 </div>
-                 <div className="animate-reveal delay-200">
-                    <div className="bg-white/5 backdrop-blur-2xl p-2 rounded-[2rem] border border-white/10 shadow-2xl relative overflow-hidden">
-                       <img 
-                         src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=1200" 
-                         alt="AI" 
-                         className="rounded-[1.8rem] w-full mix-blend-overlay opacity-30" 
-                       />
-                       <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="p-2 bg-blue-600/20 rounded-full animate-pulse">
-                             <Sparkles className="text-blue-400 w-5 h-5" />
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </section>
-
         {/* Pricing */}
         <section id="pricing" className="py-16 bg-white">
            <div className="max-w-5xl mx-auto px-4">
@@ -324,7 +284,10 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                   <p className="text-slate-500 max-w-sm mb-5 font-medium leading-relaxed text-[9px]">
                      Building intelligent financial infrastructure for the next generation of entrepreneurs.
                   </p>
-                  <img src="https://imgs.search.brave.com/ub6igt8xl2B8ypkP8h91JVhAUG_UBccUb32iQExvrn8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi85Lzk1L0lu/Zm9zeXNfbG9nby5z/dmcvMjUwcHgtSW5m/b3N5c19sb2dvLnN2/Zy5wbmc" alt="Infosys" className="h-2 grayscale opacity-20" />
+                  <div className="flex items-center gap-2 mt-4">
+                    <span className="text-[7px] font-black text-slate-400 uppercase tracking-widest">Architected by</span>
+                    <img src={BUILDER_LOGO} alt="Builder Logo" className="h-4 w-4 rounded-sm object-contain opacity-50 hover:opacity-100 transition-opacity" />
+                  </div>
                </div>
                
                <div>
@@ -347,9 +310,12 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
             </div>
 
             <div className="pt-6 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-3">
-               <p className="text-[7px] text-slate-400 font-black uppercase tracking-[0.4em]">
-                  © 2026 BizSight AI • Developed by <a href={PORTFOLIO_URL} target="_blank" className="text-slate-900 hover:text-blue-600 transition underline">Sourish Dey</a>
-               </p>
+               <div className="flex items-center gap-3">
+                  <p className="text-[7px] text-slate-400 font-black uppercase tracking-[0.4em]">
+                    © 2026 BizSight AI • Engineered by
+                  </p>
+                  <img src={BUILDER_LOGO} alt="" className="h-3 opacity-60" />
+               </div>
                <div className="flex gap-5 text-[7px] font-black text-slate-400 uppercase tracking-[0.4em]">
                   <a href="#" className="hover:text-slate-900 transition">Privacy</a>
                   <a href="#" className="hover:text-slate-900 transition">Terms</a>
@@ -418,8 +384,4 @@ const MiniCard = ({ icon, label }: { icon: React.ReactNode, label: string }) => 
       <div className="p-1 bg-slate-50 rounded-md">{icon}</div>
       <span className="text-[6px] font-black text-slate-900 uppercase tracking-widest">{label}</span>
    </div>
-);
-
-const AlertCircle = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
 );
