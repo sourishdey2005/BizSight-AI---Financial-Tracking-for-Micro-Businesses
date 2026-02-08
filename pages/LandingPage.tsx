@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+
+import React, { useEffect, useRef } from 'react';
 import { 
   TrendingUp, 
   ArrowRight,
@@ -19,7 +20,13 @@ import {
   ArrowUpRight,
   SmartphoneNfc,
   Cpu,
-  Fingerprint
+  Fingerprint,
+  ArrowLeftRight,
+  PieChart,
+  FileText,
+  Lock,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { User } from '../types';
 
@@ -27,6 +34,8 @@ const STREAMLIT_URL = "https://bizsight-ai---business-intelligence-platform.stre
 const PORTFOLIO_URL = "https://sourishdeyportfolio.vercel.app/";
 
 export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleScroll = (e: MouseEvent) => {
       const target = e.target as HTMLAnchorElement;
@@ -45,6 +54,57 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
   const navigateToStreamlit = () => {
     window.location.href = STREAMLIT_URL;
   };
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
+
+  const outcomes = [
+    {
+      title: "Sales & Expense Logging",
+      desc: "Record every transaction instantly via a streamlined, mobile-first interface designed for high-speed commerce.",
+      icon: <ArrowLeftRight className="text-blue-600" />
+    },
+    {
+      title: "Automated Profit Calc",
+      desc: "Real-time P&L balancing. Automatically determine your net yield per day, week, or month without manual entry.",
+      icon: <Zap className="text-amber-600" />
+    },
+    {
+      title: "Category-wise Analysis",
+      desc: "Granular breakdown of costs and revenue. Understand exactly which departments are driving your growth.",
+      icon: <PieChart className="text-purple-600" />
+    },
+    {
+      title: "Inventory Adjustment",
+      desc: "Dynamic stock linking. Adjust levels on the fly to auto-calculate Cost of Goods Sold (COGS) and margins.",
+      icon: <Layers className="text-emerald-600" />
+    },
+    {
+      title: "Report Generation",
+      desc: "One-click professional PDF and Excel statements. Audit-ready reports for your accountants or stakeholders.",
+      icon: <FileText className="text-rose-600" />
+    },
+    {
+      title: "Predictive Trends",
+      desc: "Leverage proprietary AI models to forecast sales peaks and stockouts based on your historical behavior.",
+      icon: <Brain className="text-indigo-600" />
+    },
+    {
+      title: "BI Data Dashboard",
+      desc: "Visual clarity for complex data. Interact with your business health through high-fidelity charts and heatmaps.",
+      icon: <BarChart3 className="text-cyan-600" />
+    },
+    {
+      title: "Secure Enterprise Accounts",
+      desc: "Robust RBAC (Role-Based Access Control) for multiple staff logins. Your financial vault is encrypted and audited.",
+      icon: <ShieldCheck className="text-slate-900" />
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white selection:bg-blue-100 selection:text-blue-900 text-[10px] md:text-[11px] leading-relaxed">
@@ -85,6 +145,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
           
           <div className="hidden lg:flex items-center gap-6 text-[8px] font-black text-slate-500 uppercase tracking-widest">
             <a href="#platform" className="hover:text-blue-600 transition-colors">Platform</a>
+            <a href="#outcomes" className="hover:text-blue-600 transition-colors">Outcomes</a>
             <a href="#inventory" className="hover:text-blue-600 transition-colors">Inventory</a>
             <a href="#analytics" className="hover:text-blue-600 transition-colors">Analytics</a>
             <a href="#pricing" className="hover:text-blue-600 transition-colors">Pricing</a>
@@ -139,7 +200,6 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
               </button>
             </div>
 
-            {/* Visual Feature Grid (Mini) */}
             <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 animate-reveal delay-400 max-w-3xl mx-auto">
                <MiniCard icon={<SmartphoneNfc className="text-blue-500 w-3.5 h-3.5" />} label="Quick Tap" />
                <MiniCard icon={<Cpu className="text-indigo-500 w-3.5 h-3.5" />} label="AI Logic" />
@@ -177,8 +237,57 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
           </div>
         </section>
 
+        {/* Outcomes Showcase Section with Swipe Animation */}
+        <section id="outcomes" className="py-20 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 animate-reveal">
+              <div className="max-w-2xl">
+                <h2 className="text-2xl md:text-4xl font-black text-slate-900 mb-4 tracking-tighter">Strategic business <span className="text-blue-600">outcomes.</span></h2>
+                <p className="text-slate-500 font-medium text-[10px] md:text-[11px] leading-relaxed">Every feature in BizSight AI is architected to produce measurable results for your bottom line. Swipe through our core operational pillars.</p>
+              </div>
+              <div className="flex gap-2">
+                <button 
+                  onClick={() => scroll('left')}
+                  className="p-3 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-400 hover:text-slate-900 transition-all shadow-sm border border-slate-100 active:scale-90"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button 
+                  onClick={() => scroll('right')}
+                  className="p-3 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-400 hover:text-slate-900 transition-all shadow-sm border border-slate-100 active:scale-90"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            <div 
+              ref={scrollRef}
+              className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide no-scrollbar -mx-4 px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {outcomes.map((outcome, idx) => (
+                <div 
+                  key={idx} 
+                  className="min-w-[280px] md:min-w-[340px] snap-start bg-slate-50/50 p-8 rounded-[2rem] border border-slate-100 hover:border-blue-200 transition-all duration-500 hover:bg-white hover:shadow-2xl hover:shadow-blue-50 group"
+                >
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-slate-100 group-hover:scale-110 group-hover:-rotate-3 transition-transform">
+                    {/* Fix: Cast icon as ReactElement<any> to satisfy TypeScript about the className property */}
+                    {React.cloneElement(outcome.icon as React.ReactElement<any>, { className: 'w-6 h-6' })}
+                  </div>
+                  <h3 className="text-base font-black text-slate-900 mb-3 uppercase tracking-tight">{outcome.title}</h3>
+                  <p className="text-slate-500 font-medium text-[10px] md:text-[11px] leading-relaxed italic mb-4">"{outcome.desc}"</p>
+                  <div className="flex items-center gap-2 text-blue-600 font-black text-[8px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                    Outcome Verified <Check className="w-3 h-3" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Inventory Intelligence */}
-        <section id="inventory" className="py-16 bg-white overflow-hidden">
+        <section id="inventory" className="py-16 bg-slate-50/30 overflow-hidden">
           <div className="max-w-5xl mx-auto px-4">
              <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="relative group animate-reveal">
