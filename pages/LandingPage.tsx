@@ -23,7 +23,6 @@ import {
 } from 'lucide-react';
 import { User } from '../types';
 
-const BUILDER_LOGO = "https://res.cloudinary.com/dodhvvewu/image/upload/v1770584790/9783222e98b0d5141519b41e7203ff9a_pyjqit.webp";
 const STREAMLIT_URL = "https://bizsight-ai---business-intelligence-platform.streamlit.app/";
 const PORTFOLIO_URL = "https://sourishdeyportfolio.vercel.app/";
 
@@ -55,8 +54,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-3">
              <div className="flex items-center gap-2">
-               <span className="text-[7px] font-black text-slate-400 uppercase tracking-widest">Built by</span>
-               <img src={BUILDER_LOGO} alt="Builder Logo" className="h-4 w-4 rounded-md object-contain" />
+               <span className="text-[7px] font-black text-slate-400 uppercase tracking-widest">Enterprise Platform</span>
              </div>
              <div className="h-3 w-px bg-slate-200 hidden sm:block"></div>
              <p className="text-[7px] font-black text-slate-400 uppercase tracking-[0.2em] hidden sm:block">Strategic Intelligence Partner</p>
@@ -112,11 +110,6 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
       <main>
         {/* Hero Section */}
         <section className="relative pt-16 pb-12 px-4 overflow-hidden">
-          {/* Builder Logo Decoration */}
-          <div className="absolute top-0 right-0 w-32 h-32 -mr-8 -mt-8 pointer-events-none opacity-10 rotate-12 z-0">
-            <img src={BUILDER_LOGO} alt="" className="w-full h-full object-contain" />
-          </div>
-
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-[7px] font-black mb-6 animate-reveal border border-blue-100 shadow-sm uppercase tracking-widest">
               <Sparkles className="w-2 h-2 fill-blue-600" />
@@ -284,10 +277,6 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                   <p className="text-slate-500 max-w-sm mb-5 font-medium leading-relaxed text-[9px]">
                      Building intelligent financial infrastructure for the next generation of entrepreneurs.
                   </p>
-                  <div className="flex items-center gap-2 mt-4">
-                    <span className="text-[7px] font-black text-slate-400 uppercase tracking-widest">Architected by</span>
-                    <img src={BUILDER_LOGO} alt="Builder Logo" className="h-4 w-4 rounded-sm object-contain opacity-50 hover:opacity-100 transition-opacity" />
-                  </div>
                </div>
                
                <div>
@@ -312,9 +301,8 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
             <div className="pt-6 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-3">
                <div className="flex items-center gap-3">
                   <p className="text-[7px] text-slate-400 font-black uppercase tracking-[0.4em]">
-                    © 2026 BizSight AI • Engineered by
+                    © 2026 BizSight AI • Engineered for Scale
                   </p>
-                  <img src={BUILDER_LOGO} alt="" className="h-3 opacity-60" />
                </div>
                <div className="flex gap-5 text-[7px] font-black text-slate-400 uppercase tracking-[0.4em]">
                   <a href="#" className="hover:text-slate-900 transition">Privacy</a>

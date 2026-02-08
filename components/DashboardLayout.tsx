@@ -23,8 +23,6 @@ interface DashboardLayoutProps {
   onLogout: () => void;
 }
 
-const BUILDER_LOGO = "https://res.cloudinary.com/dodhvvewu/image/upload/v1770584790/9783222e98b0d5141519b41e7203ff9a_pyjqit.webp";
-
 export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ user, onLogout }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
@@ -62,10 +60,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ user, onLogout
             </div>
             <div className="flex flex-col">
               <span className="text-base font-black text-slate-900 tracking-tighter leading-none uppercase">BizSight AI</span>
-              <div className="flex items-center gap-1 mt-1 opacity-60 grayscale hover:opacity-100 transition-opacity">
-                <span className="text-[6px] font-black uppercase tracking-widest">Built by</span>
-                <img src={BUILDER_LOGO} alt="" className="h-2 w-fit" />
-              </div>
+              <span className="text-[6px] font-black text-blue-600 uppercase tracking-widest mt-1">Financial OS</span>
             </div>
           </div>
           
@@ -124,10 +119,6 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ user, onLogout
           </div>
           
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 pr-4 border-r border-slate-100">
-               <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Platform Partner:</span>
-               <img src={BUILDER_LOGO} alt="Builder" className="h-3.5 opacity-60 hover:opacity-100 transition-opacity rounded" />
-            </div>
             <button className="p-1.5 bg-slate-50 rounded-md text-slate-500 hover:text-blue-600 transition hover:bg-blue-50 relative">
               <Bell className="w-3.5 h-3.5" />
               <span className="absolute top-1 right-1 w-1.5 h-1.5 bg-rose-500 rounded-full border border-white"></span>
@@ -141,8 +132,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ user, onLogout
             <div className="p-1 bg-blue-600 rounded-lg">
               <BarChart3 className="text-white w-3.5 h-3.5" />
             </div>
-            <span className="text-xs font-black text-slate-900 tracking-tighter uppercase">BizSight</span>
-            <img src={BUILDER_LOGO} alt="" className="h-3 ml-1 opacity-50 grayscale" />
+            <span className="text-xs font-black text-slate-900 tracking-tighter uppercase">BizSight AI</span>
           </div>
           <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-1.5 text-slate-900 bg-slate-50 rounded-lg">
             {sidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -155,12 +145,8 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ user, onLogout
           </div>
           
           <footer className="mt-12 py-6 border-t border-slate-100 flex flex-col items-center gap-2">
-            <div className="flex items-center gap-2 grayscale opacity-20">
-               <span className="text-[8px] font-black uppercase tracking-[0.2em] text-slate-500">Built by</span>
-               <img src={BUILDER_LOGO} alt="Builder Logo" className="h-4" />
-            </div>
             <p className="text-slate-400 text-[8px] font-black uppercase tracking-[0.2em]">
-              © 2026 BizSight AI Platform
+              © 2026 BizSight AI Platform • Intelligent Commerce
             </p>
           </footer>
         </main>

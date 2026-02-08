@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Mail, Lock, LogIn, Loader2, CheckCircle2, TrendingUp } from 'lucide-react';
 import { User } from '../types';
 
-const BUILDER_LOGO = "https://res.cloudinary.com/dodhvvewu/image/upload/v1770584790/9783222e98b0d5141519b41e7203ff9a_pyjqit.webp";
 const STREAMLIT_URL = "https://bizsight-ai---business-intelligence-platform.streamlit.app/";
 
 interface LoginPageProps {
@@ -41,15 +40,13 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
       <div className="hidden lg:flex w-1/2 gradient-mesh p-16 flex-col justify-between text-white relative">
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-12">
-            <img src={BUILDER_LOGO} alt="Builder" className="h-8 brightness-0 invert opacity-90" />
-            <div className="h-6 w-px bg-white/20"></div>
             <span className="text-xs font-black uppercase tracking-[0.4em]">BizSight AI</span>
           </div>
           <h1 className="text-5xl font-black tracking-tighter leading-[1.05] mb-6">
             Intelligent tracking <br />for the modern seller.
           </h1>
           <p className="text-blue-100 text-sm max-w-md font-medium">
-            Built by the industry leaders in financial intelligence to help Indian enterprises scale with precision and speed.
+            Deploy high-fidelity financial intelligence to your enterprise and scale with precision and speed.
           </p>
         </div>
 
@@ -63,7 +60,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
               <p className="text-lg font-black tracking-tight">+22% Net Revenue Yield</p>
             </div>
           </div>
-          <p className="text-[11px] text-blue-100/70 font-medium italic">Verified across our micro-commerce portfolio in Q3 2024.</p>
+          <p className="text-[11px] text-blue-100/70 font-medium italic">Verified performance metrics across retail portfolio sectors.</p>
         </div>
       </div>
 
@@ -71,7 +68,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-6 lg:px-24 bg-slate-50 relative">
         <div className="w-full max-w-sm animate-reveal">
           <div className="lg:hidden mb-12 flex items-center gap-3">
-             <img src={BUILDER_LOGO} alt="Builder" className="h-6 rounded shadow-sm" />
              <h2 className="text-lg font-black text-slate-900 tracking-tighter uppercase">BizSight AI</h2>
           </div>
 
@@ -102,7 +98,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
                       onChange={(e) => setEmail(e.target.value)}
                       disabled={isSubmitting}
                       className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-[11px] font-bold outline-none focus:ring-4 focus:ring-blue-50 transition-all"
-                      placeholder="rahul@business.com"
+                      placeholder="user@business.com"
                     />
                   </div>
                 </div>
@@ -149,10 +145,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
         </div>
 
         <footer className="absolute bottom-6 left-0 right-0 text-center flex flex-col items-center gap-2">
-            <div className="flex items-center gap-2 grayscale opacity-40">
-              <span className="text-[7px] font-black uppercase tracking-widest text-slate-500">Architected by</span>
-              <img src={BUILDER_LOGO} alt="" className="h-4" />
-            </div>
+            <span className="text-[7px] font-black uppercase tracking-widest text-slate-500 opacity-60">© 2026 BizSight AI Platform</span>
         </footer>
       </div>
     </div>

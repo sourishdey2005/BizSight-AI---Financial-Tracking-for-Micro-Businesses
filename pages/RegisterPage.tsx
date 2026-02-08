@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Mail, Lock, User as UserIcon, Briefcase, Loader2, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { User, Role } from '../types';
 
-const BUILDER_LOGO = "https://res.cloudinary.com/dodhvvewu/image/upload/v1770584790/9783222e98b0d5141519b41e7203ff9a_pyjqit.webp";
 const STREAMLIT_URL = "https://bizsight-ai---business-intelligence-platform.streamlit.app/";
 
 interface RegisterPageProps {
@@ -49,15 +48,13 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onRegister }) => {
       <div className="hidden lg:flex w-2/5 gradient-mesh p-16 flex-col justify-between text-white relative overflow-hidden">
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-12">
-            <img src={BUILDER_LOGO} alt="Builder" className="h-8 brightness-0 invert opacity-90" />
-            <div className="h-6 w-px bg-white/20"></div>
             <span className="text-xs font-black uppercase tracking-[0.4em]">BizSight AI</span>
           </div>
           <h1 className="text-5xl font-black tracking-tighter leading-[1.05] mb-6">
             Join the future of <br />micro-finance.
           </h1>
           <p className="text-blue-100 text-sm max-w-sm font-medium">
-            Deploy enterprise-grade intelligence to your local business in under 2 minutes.
+            Deploy enterprise-grade intelligence to your business in under 2 minutes.
           </p>
         </div>
 
@@ -73,8 +70,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onRegister }) => {
         <div className="w-full max-w-lg animate-reveal">
           <div className="lg:hidden mb-12 flex items-center justify-between">
              <div className="flex items-center gap-2">
-               <img src={BUILDER_LOGO} alt="" className="h-6 rounded shadow-sm" />
-               <h2 className="text-lg font-black text-slate-900 tracking-tighter uppercase">BizSight</h2>
+               <h2 className="text-lg font-black text-slate-900 tracking-tighter uppercase">BizSight AI</h2>
              </div>
           </div>
 
@@ -90,7 +86,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onRegister }) => {
             <>
               <div className="mb-10">
                 <h2 className="text-3xl font-black text-slate-900 tracking-tighter uppercase leading-none mb-3">Create account</h2>
-                <p className="text-slate-500 text-[11px] font-bold uppercase tracking-widest opacity-60 italic">Join 2,500+ intelligent sellers</p>
+                <p className="text-slate-500 text-[11px] font-bold uppercase tracking-widest opacity-60 italic">Join thousands of intelligent sellers</p>
               </div>
               
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -104,7 +100,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onRegister }) => {
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                         className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-[11px] font-bold outline-none focus:ring-4 focus:ring-blue-50 transition-all"
-                        placeholder="John Doe"
+                        placeholder="Full Name"
                       />
                     </div>
                   </div>
@@ -117,7 +113,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onRegister }) => {
                         value={formData.businessName}
                         onChange={(e) => setFormData({...formData, businessName: e.target.value})}
                         className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-[11px] font-bold outline-none focus:ring-4 focus:ring-blue-50 transition-all"
-                        placeholder="Nexus Retail"
+                        placeholder="Enterprise Name"
                       />
                     </div>
                   </div>
@@ -132,7 +128,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onRegister }) => {
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-[11px] font-bold outline-none focus:ring-4 focus:ring-blue-50 transition-all"
-                      placeholder="john@nexus.com"
+                      placeholder="email@enterprise.com"
                     />
                   </div>
                 </div>
@@ -195,10 +191,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onRegister }) => {
         </div>
         
         <footer className="mt-12 flex flex-col items-center gap-2">
-            <div className="flex items-center gap-2 grayscale opacity-40">
-              <span className="text-[7px] font-black uppercase tracking-widest text-slate-500">Architected by</span>
-              <img src={BUILDER_LOGO} alt="" className="h-4" />
-            </div>
+           <span className="text-[7px] font-black uppercase tracking-widest text-slate-500 opacity-60">© 2026 BizSight AI Platform</span>
         </footer>
       </div>
     </div>
