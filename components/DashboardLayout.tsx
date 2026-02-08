@@ -146,13 +146,16 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ user, onLogout
             <Outlet />
           </div>
           
-          <footer className="mt-12 py-6 border-t border-slate-100 flex flex-col items-center gap-2">
-            <div className="flex items-center gap-2 grayscale opacity-40">
-               <span className="text-[7px] font-black uppercase tracking-[0.2em] text-slate-500">Built by</span>
-               <img src={BUILDER_LOGO} alt="Builder Logo" className="h-3" />
+          <footer className="mt-12 py-16 border-t border-slate-100 flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-4">
+               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Strategic Engineering Lead</span>
+               <div className="relative group">
+                 <div className="absolute -inset-2 bg-blue-600/5 rounded-2xl blur-lg group-hover:bg-blue-600/10 transition-all"></div>
+                 <img src={BUILDER_LOGO} alt="Builder Logo" className="relative h-16 w-16 rounded-2xl object-cover shadow-2xl shadow-slate-300 ring-4 ring-white transition-transform hover:scale-110" />
+               </div>
             </div>
-            <p className="text-slate-400 text-[8px] font-black uppercase tracking-[0.2em]">
-              © 2026 BizSight AI Platform • Intelligent Commerce
+            <p className="text-slate-400 text-[9px] font-black uppercase tracking-[0.3em]">
+              © 2026 BizSight AI Platform • Intelligent Commerce Ecosystem
             </p>
           </footer>
         </main>

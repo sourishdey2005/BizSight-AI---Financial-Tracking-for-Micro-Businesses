@@ -285,32 +285,49 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
           </div>
         </section>
 
-        {/* Inventory Intelligence */}
-        <section id="inventory" className="py-16 bg-slate-50/30 overflow-hidden">
-          <div className="max-w-5xl mx-auto px-4">
-             <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* Inventory Intelligence - IMAGE MADE LARGE AND CLEARLY VISIBLE */}
+        <section id="inventory" className="py-24 bg-slate-50/30 overflow-hidden border-y border-slate-100">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+             <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div className="relative group animate-reveal">
-                   <div className="absolute -inset-4 bg-blue-100/10 rounded-[2rem] blur-[50px]"></div>
-                   <div className="relative bg-white p-2 rounded-[2rem] shadow-lg border border-slate-100 overflow-hidden">
+                   <div className="absolute -inset-10 bg-blue-600/5 rounded-[4rem] blur-[80px] group-hover:bg-blue-600/10 transition-colors"></div>
+                   <div className="relative bg-white p-3 rounded-[3rem] shadow-2xl border border-slate-100 overflow-hidden ring-1 ring-slate-900/5">
                       <img 
-                        src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=1200" 
-                        alt="Inventory" 
-                        className="rounded-[1.8rem] w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-700" 
+                        src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=1600" 
+                        alt="Inventory intelligence system showcase" 
+                        className="rounded-[2.5rem] w-full h-full aspect-[16/10] object-cover hover:scale-[1.02] transition-transform duration-1000" 
                       />
+                      <div className="absolute bottom-10 left-10 glass p-5 rounded-2xl border border-white/20 shadow-2xl animate-float">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg">
+                            <TrendingUp className="text-white w-4 h-4" />
+                          </div>
+                          <div>
+                            <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Real-time Yield</p>
+                            <p className="text-sm font-black text-slate-900">+18.4% Efficiency</p>
+                          </div>
+                        </div>
+                      </div>
                    </div>
                 </div>
                 <div className="animate-reveal delay-200">
-                   <div className="inline-flex p-1.5 bg-blue-600 rounded-md mb-5 shadow-lg shadow-blue-100">
-                      <Database className="text-white w-4 h-4" />
+                   <div className="inline-flex p-2 bg-blue-600 rounded-xl mb-6 shadow-xl shadow-blue-100">
+                      <Database className="text-white w-5 h-5" />
                    </div>
-                   <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-3 leading-tight tracking-tight">Stock linked to <br /><span className="text-blue-600">Net Margins.</span></h3>
-                   <p className="text-slate-600 text-[10px] leading-relaxed mb-6 font-medium">
-                      Automatically calculates actual net profit per unit—accounting for GST, batch costs, and overheads in real-time.
+                   <h3 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-[1.1] tracking-tighter">Stock linked to <br /><span className="text-gradient">Dynamic Margins.</span></h3>
+                   <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8 font-medium max-w-lg">
+                      Move beyond simple counts. Our intelligence engine automatically calculates your absolute net profit per unit—accounting for real-time GST, batch costs, and overheads.
                    </p>
-                   <div className="space-y-2">
-                      <CheckListItem text="Dynamic COGS Engine" />
-                      <CheckListItem text="Batch-wise profitability" />
-                      <CheckListItem text="Multi-warehouse sync" />
+                   <div className="space-y-4">
+                      <CheckListItem text="Dynamic COGS Precision Engine" />
+                      <CheckListItem text="Batch-level profitability tracking" />
+                      <CheckListItem text="Global multi-warehouse synchronization" />
+                      <CheckListItem text="AI-powered stockout prevention" />
+                   </div>
+                   <div className="mt-10">
+                      <button onClick={navigateToStreamlit} className="flex items-center gap-2 text-blue-600 font-black text-xs uppercase tracking-widest hover:translate-x-1 transition-transform">
+                        Explore Inventory OS <ArrowRight className="w-4 h-4" />
+                      </button>
                    </div>
                 </div>
              </div>
@@ -372,54 +389,71 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
         </section>
       </main>
 
-      <footer className="bg-white py-10 border-t border-slate-100">
-         <div className="max-w-5xl mx-auto px-4">
-            <div className="grid md:grid-cols-4 gap-8 mb-10">
-               <div className="col-span-1 md:col-span-2">
-                  <div className="flex items-center gap-2.5 mb-5">
-                    <div className="p-1 bg-blue-600 rounded shadow-md">
-                        <BarChart3 className="text-white w-3 h-3" />
+      <footer className="bg-white pt-24 pb-12 border-t border-slate-100">
+         <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="grid md:grid-cols-4 gap-12 mb-16">
+               <div className="col-span-1 md:col-span-2 space-y-8">
+                  <div className="flex items-center gap-2.5">
+                    <div className="p-2 bg-blue-600 rounded-xl shadow-xl shadow-blue-200">
+                        <BarChart3 className="text-white w-5 h-5" />
                     </div>
-                    <span className="text-base font-black text-slate-900 tracking-tighter uppercase">BizSight AI</span>
+                    <span className="text-2xl font-black text-slate-900 tracking-tighter uppercase">BizSight AI</span>
                   </div>
-                  <p className="text-slate-500 max-w-sm mb-5 font-medium leading-relaxed text-[9px]">
-                     Building intelligent financial infrastructure for the next generation of entrepreneurs.
+                  <p className="text-slate-500 max-w-sm font-medium leading-relaxed text-base">
+                     Building intelligent financial infrastructure for the next generation of global entrepreneurs.
                   </p>
-                  <div className="flex items-center gap-2 mt-4">
-                    <span className="text-[7px] font-black text-slate-400 uppercase tracking-widest">Architected by</span>
-                    <img src={BUILDER_LOGO} alt="Builder Logo" className="h-4 w-4 rounded-sm object-contain opacity-50 hover:opacity-100 transition-opacity" />
+                  
+                  {/* LOGO MADE LARGE AND CLEARLY VISIBLE */}
+                  <div className="flex flex-col gap-6 p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 max-w-sm group hover:bg-white transition-all hover:shadow-2xl hover:shadow-slate-300/40">
+                    <span className="text-[10px] font-black text-blue-600 uppercase tracking-[0.4em] mb-1">Strategic Engineering Lead</span>
+                    <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 group">
+                      <div className="relative">
+                        <div className="absolute -inset-2 bg-blue-600/10 rounded-3xl blur-md group-hover:blur-xl transition-all"></div>
+                        <img 
+                          src={BUILDER_LOGO} 
+                          alt="Engineering Lead Logo" 
+                          className="relative h-20 w-20 rounded-[1.5rem] object-cover shadow-2xl shadow-blue-200 ring-4 ring-white group-hover:scale-110 transition-transform duration-500" 
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-lg font-black text-slate-900 leading-tight">Sourish Dey</span>
+                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mt-1">Founding Partner</span>
+                      </div>
+                    </a>
                   </div>
                </div>
                
                <div>
-                  <h4 className="text-[7px] font-black text-slate-900 uppercase tracking-[0.3em] mb-4">Platform</h4>
-                  <ul className="space-y-2 text-slate-500 font-bold text-[8px] uppercase tracking-widest">
-                     <li><a href="#platform" className="hover:text-blue-600 transition">Core Features</a></li>
-                     <li><a href="#inventory" className="hover:text-blue-600 transition">Inventory OS</a></li>
-                     <li><a href="#analytics" className="hover:text-blue-600 transition">AI Predictions</a></li>
+                  <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em] mb-8">Platform OS</h4>
+                  <ul className="space-y-5 text-slate-500 font-bold text-xs uppercase tracking-widest">
+                     <li><a href="#platform" className="hover:text-blue-600 transition-colors">Core Features</a></li>
+                     <li><a href="#inventory" className="hover:text-blue-600 transition-colors">Inventory Intelligence</a></li>
+                     <li><a href="#outcomes" className="hover:text-blue-600 transition-colors">Business Outcomes</a></li>
+                     <li><a href="#analytics" className="hover:text-blue-600 transition-colors">AI Forecasting</a></li>
                   </ul>
                </div>
 
                <div>
-                  <h4 className="text-[7px] font-black text-slate-900 uppercase tracking-[0.3em] mb-4">Support</h4>
-                  <ul className="space-y-2 text-slate-500 font-bold text-[8px] uppercase tracking-widest">
-                     <li><a href={PORTFOLIO_URL} target="_blank" className="hover:text-blue-600 transition">Sourish Dey</a></li>
-                     <li><a href="#" className="hover:text-blue-600 transition">System Status</a></li>
-                     <li><a href="#" className="hover:text-blue-600 transition">Docs</a></li>
+                  <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em] mb-8">Strategic Links</h4>
+                  <ul className="space-y-5 text-slate-500 font-bold text-xs uppercase tracking-widest">
+                     <li><a href={PORTFOLIO_URL} target="_blank" className="hover:text-blue-600 transition-colors">Developer Portfolio</a></li>
+                     <li><a href="#" className="hover:text-blue-600 transition-colors">Enterprise Support</a></li>
+                     <li><a href="#" className="hover:text-blue-600 transition-colors">Security Vault</a></li>
+                     <li><a href="#" className="hover:text-blue-600 transition-colors">API Specification</a></li>
                   </ul>
                </div>
             </div>
 
-            <div className="pt-6 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-3">
-               <div className="flex items-center gap-3">
-                  <p className="text-[7px] text-slate-400 font-black uppercase tracking-[0.4em]">
-                    © 2026 BizSight AI • Engineered by
+            <div className="pt-10 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-8">
+               <div className="flex items-center gap-6">
+                  <p className="text-[9px] text-slate-400 font-black uppercase tracking-[0.4em]">
+                    © 2026 BizSight AI Platform • Engineered by
                   </p>
-                  <img src={BUILDER_LOGO} alt="Builder Logo" className="h-4 opacity-60 rounded-sm" />
+                  <img src={BUILDER_LOGO} alt="Partner Logo" className="h-10 opacity-100 rounded-xl shadow-md ring-2 ring-slate-100" />
                </div>
-               <div className="flex gap-5 text-[7px] font-black text-slate-400 uppercase tracking-[0.4em]">
-                  <a href="#" className="hover:text-slate-900 transition">Privacy</a>
-                  <a href="#" className="hover:text-slate-900 transition">Terms</a>
+               <div className="flex gap-10 text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">
+                  <a href="#" className="hover:text-slate-900 transition-colors">Privacy Charter</a>
+                  <a href="#" className="hover:text-slate-900 transition-colors">Service Terms</a>
                </div>
             </div>
          </div>
@@ -444,7 +478,7 @@ const PricingCard = ({ tier, price, desc, features, recommended = false }: any) 
    }`}>
       {recommended && (
          <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[6px] font-black uppercase tracking-[0.3em] px-2 py-1 rounded-full shadow-lg">
-            Best Seller
+            Enterprise Choice
          </span>
       )}
       <p className={`text-[7px] font-black uppercase tracking-[0.3em] mb-3 ${recommended ? 'text-blue-400' : 'text-blue-600'}`}>{tier}</p>
@@ -466,15 +500,15 @@ const PricingCard = ({ tier, price, desc, features, recommended = false }: any) 
          className={`w-full py-2.5 rounded-lg font-black transition-all text-center block text-[9px] uppercase tracking-widest active:scale-95 ${
          recommended ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg' : 'bg-slate-100 text-slate-900 hover:bg-blue-600 hover:text-white'
       }`}>
-         Choose Plan
+         Activate {tier}
       </a>
    </div>
 );
 
 const CheckListItem = ({ text }: { text: string }) => (
-   <div className="flex items-center gap-2 text-[9px] font-black text-slate-700 group cursor-default uppercase tracking-tight">
-      <div className="w-3 h-3 rounded bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-         <Check className="w-2 h-2 text-blue-600 group-hover:text-white" />
+   <div className="flex items-center gap-3 text-xs md:text-sm font-black text-slate-700 group cursor-default uppercase tracking-tight">
+      <div className="w-4 h-4 rounded-md bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+         <Check className="w-2.5 h-2.5 text-blue-600 group-hover:text-white" />
       </div>
       {text}
    </div>
