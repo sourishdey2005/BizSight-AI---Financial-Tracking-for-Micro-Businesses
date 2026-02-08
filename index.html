@@ -6,9 +6,9 @@
     <title>BizSight AI | Intelligent Financial Tracking</title>
     <link rel="icon" type="image/png" href="https://imgs.search.brave.com/ub6igt8xl2B8ypkP8h91JVhAUG_UBccUb32iQExvrn8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi85Lzk1L0lu/Zm9zeXNfbG9nby5z/dmcvMjUwcHgtSW5m/b3N5c19sb2dvLnN2/Zy5wbmc">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; background-color: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; background-color: #ffffff; }
         
         @keyframes slideUpFade {
             from { opacity: 0; transform: translateY(40px); filter: blur(10px); }
@@ -26,9 +26,9 @@
             50% { transform: translateY(-12px); }
         }
 
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
         .animate-reveal { animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
@@ -41,16 +41,9 @@
 
         .glass {
             background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px) saturate(180%);
-            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
             border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .glass-dark {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(16px) saturate(150%);
-            -webkit-backdrop-filter: blur(16px) saturate(150%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .gradient-mesh {
@@ -73,6 +66,11 @@
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .mask-radial {
+          mask-image: radial-gradient(circle, white, transparent);
+          -webkit-mask-image: radial-gradient(circle, white, transparent);
+        }
     </style>
     <script type="importmap">
     {
@@ -88,7 +86,7 @@
     </script>
     <script type="module" src="index.tsx"></script>
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased">
+<body class="bg-white text-slate-900 antialiased">
     <div id="root"></div>
 </body>
 </html>
