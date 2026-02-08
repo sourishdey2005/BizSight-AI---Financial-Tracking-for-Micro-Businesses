@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { 
   TrendingUp, 
@@ -29,9 +28,13 @@ import {
   ChevronRight,
   Quote,
   Store,
-  ZapOff,
   Briefcase,
-  CheckCircle2
+  CheckCircle2,
+  Users,
+  Search,
+  ZapOff,
+  History,
+  Workflow
 } from 'lucide-react';
 import { User } from '../types';
 
@@ -154,7 +157,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
             <a href="#outcomes" className="hover:text-blue-600 transition-colors">Outcomes</a>
             <a href="#inventory" className="hover:text-blue-600 transition-colors">Inventory</a>
             <a href="#verticals" className="hover:text-blue-600 transition-colors">Industries</a>
-            <a href="#testimonials" className="hover:text-blue-600 transition-colors">Testimonials</a>
+            <a href="#workflow" className="hover:text-blue-600 transition-colors">Process</a>
             <a href="#pricing" className="hover:text-blue-600 transition-colors">Pricing</a>
             <button onClick={navigateToStreamlit} className="text-blue-600 flex items-center gap-1">
               Launch demo <ArrowRight className="w-2.5 h-2.5" />
@@ -177,19 +180,19 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
 
       <main>
         {/* Hero Section */}
-        <section className="relative pt-24 pb-16 px-4 overflow-hidden">
+        <section className="relative pt-24 pb-24 px-4 overflow-hidden">
           <div className="max-w-5xl mx-auto text-center relative z-10">
             <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full text-[8px] font-black mb-8 animate-reveal border border-blue-100 shadow-sm uppercase tracking-widest">
               <Sparkles className="w-2.5 h-2.5 fill-blue-600" />
-              <span>Unified Intelligence for Indian Micro-Enterprises</span>
+              <span>India's Most Advanced SME Intelligence Platform</span>
             </div>
             
-            <h1 className="text-4xl md:text-7xl font-black text-slate-900 mb-8 leading-[1.05] tracking-tighter animate-reveal delay-100">
+            <h1 className="text-4xl md:text-7xl font-black text-slate-900 mb-8 leading-[1] tracking-tighter animate-reveal delay-100">
               Modern commerce, <br /><span className="text-gradient">intelligently simplified.</span>
             </h1>
             
-            <p className="text-sm md:text-lg text-slate-500 max-w-2xl mx-auto mb-10 font-medium leading-relaxed animate-reveal delay-200">
-              High-precision transactional tracking and AI-driven growth forecasting engineered to scale small businesses into market leaders.
+            <p className="text-sm md:text-xl text-slate-500 max-w-2xl mx-auto mb-12 font-medium leading-relaxed animate-reveal delay-200">
+              High-precision transactional tracking and AI-driven growth forecasting engineered to scale small businesses into market leaders with zero effort.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-reveal delay-300">
@@ -203,11 +206,11 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                 onClick={navigateToStreamlit}
                 className="w-full sm:w-auto bg-white text-slate-900 border border-slate-200 px-10 py-4 rounded-xl font-black text-xs hover:bg-slate-50 transition-all shadow-sm active:scale-95 uppercase tracking-widest"
               >
-                Watch Product Demo
+                Explore BI Features
               </button>
             </div>
 
-            <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 animate-reveal delay-400 max-w-4xl mx-auto">
+            <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6 animate-reveal delay-400 max-w-4xl mx-auto">
                <MiniCard icon={<SmartphoneNfc className="text-blue-500 w-5 h-5" />} label="One-Tap Logging" />
                <MiniCard icon={<Cpu className="text-indigo-500 w-5 h-5" />} label="Neural P&L Engine" />
                <MiniCard icon={<Fingerprint className="text-emerald-500 w-5 h-5" />} label="Enterprise Vault" />
@@ -215,34 +218,34 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
             </div>
           </div>
           
-          {/* Decorative Elements */}
-          <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-400/10 rounded-full blur-[120px] pointer-events-none"></div>
-          <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-96 h-96 bg-indigo-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+          {/* Decorative Mesh */}
+          <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+          <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-[600px] h-[600px] bg-indigo-400/10 rounded-full blur-[120px] pointer-events-none"></div>
         </section>
 
-        {/* Vertical Scroll Platform Capability Section */}
+        {/* Platform Ecosystem */}
         <section id="platform" className="py-24 bg-slate-50/20">
           <div className="max-w-6xl mx-auto px-4 text-center">
-             <div className="mb-16 animate-reveal">
-                <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tighter">The ultimate SME ecosystem.</h2>
-                <p className="text-slate-500 font-medium text-sm md:text-base max-w-2xl mx-auto leading-relaxed">Centralizing your complex financial operations into one high-performance, beautiful hub.</p>
+             <div className="mb-20 animate-reveal">
+                <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter">The ultimate SME ecosystem.</h2>
+                <p className="text-slate-500 font-medium text-base md:text-lg max-w-2xl mx-auto leading-relaxed">Centralizing your complex financial operations into one high-performance, beautiful hub.</p>
              </div>
              
-             <div className="grid md:grid-cols-3 gap-8">
+             <div className="grid md:grid-cols-3 gap-10">
                 <FeatureCard 
-                  image="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800"
+                  image="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1000"
                   icon={<Zap className="text-blue-600" />}
                   title="Zero-Lag Recording"
-                  description="Log complex transactions in under 2 seconds with enterprise-grade consistency. Optimized for high-frequency retail counters."
+                  description="Log complex transactions in under 2 seconds with enterprise-grade consistency. Optimized for high-frequency retail."
                 />
                 <FeatureCard 
-                  image="https://images.unsplash.com/photo-1512428559083-a401a30c9d75?auto=format&fit=crop&q=80&w=800"
+                  image="https://images.unsplash.com/photo-1512428559083-a401a30c9d75?auto=format&fit=crop&q=80&w=1000"
                   icon={<Smartphone className="text-emerald-600" />}
                   title="Mobile Intelligence"
-                  description="Real-time access to critical metrics from anywhere on the planet. High-fidelity interface optimized for Android and iOS."
+                  description="Real-time access to critical metrics from anywhere. High-fidelity interface optimized for Android and iOS."
                 />
                 <FeatureCard 
-                  image="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+                  image="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000"
                   icon={<ShieldCheck className="text-indigo-600" />}
                   title="Secure Infrastructure"
                   description="Banking-standard 256-bit encryption and automated redundant cloud vaulting for all your transactional data."
@@ -251,102 +254,90 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
           </div>
         </section>
 
-        {/* NEW SECTION: Industry Verticals */}
-        <section id="verticals" className="py-24 bg-white">
+        {/* Workflow Section */}
+        <section id="workflow" className="py-24 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="text-center mb-16 animate-reveal">
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter">Built for your specific <span className="text-blue-600">niche.</span></h2>
-              <p className="text-slate-500 font-medium text-sm md:text-base max-w-2xl mx-auto leading-relaxed">Tailored data models and workflow engines for diverse Indian business sectors.</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <VerticalCard 
-                img="https://images.unsplash.com/photo-1534723452862-4c874018d66d?auto=format&fit=crop&q=80&w=800"
-                title="Kirana & FMCG"
-                icon={<Store className="w-5 h-5 text-white" />}
-                features={["Fast POS Interface", "Expiry Tracking", "Multi-Unit Support"]}
-              />
-              <VerticalCard 
-                img="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&q=80&w=800"
-                title="Pharmacy & Meds"
-                icon={<CheckCircle2 className="w-5 h-5 text-white" />}
-                features={["Batch Management", "Schedule H Compliance", "Supplier Sync"]}
-              />
-              <VerticalCard 
-                img="https://images.unsplash.com/photo-1530124566582-a618bc2615ad?auto=format&fit=crop&q=80&w=800"
-                title="Hardware & Tools"
-                icon={<Layers className="w-5 h-5 text-white" />}
-                features={["Bulk Variations", "Project Estimator", "Credit Management"]}
-              />
-              <VerticalCard 
-                img="https://images.unsplash.com/photo-1556740734-7f951478297c?auto=format&fit=crop&q=80&w=800"
-                title="Professional Services"
-                icon={<Briefcase className="w-5 h-5 text-white" />}
-                features={["Service Invoicing", "Client Database", "Time-based Costing"]}
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Outcomes Showcase Section with Swipe Animation */}
-        <section id="outcomes" className="py-24 bg-slate-900 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 animate-reveal">
-              <div className="max-w-2xl">
-                <span className="text-blue-400 font-black text-[10px] uppercase tracking-[0.4em] mb-4 block">Measurable Success</span>
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter">Strategic business <span className="text-blue-400">outcomes.</span></h2>
-                <p className="text-slate-400 font-medium text-sm md:text-base leading-relaxed">Every feature in BizSight AI is architected to produce measurable results for your bottom line. Swipe through our core operational pillars.</p>
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+              <div className="animate-reveal">
+                <span className="text-blue-600 font-black text-[10px] uppercase tracking-[0.4em] mb-4 block">Deployment Flow</span>
+                <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-10 tracking-tighter">Simple setup. <br />Powerful <span className="text-blue-600">results.</span></h2>
+                
+                <div className="space-y-10">
+                  <WorkflowStep number="01" title="Initialize" text="Sign up and sync your business vertical parameters in under 60 seconds." />
+                  <WorkflowStep number="02" title="Log Transactions" text="Start recording sales and expenses with our one-tap interface on any device." />
+                  <WorkflowStep number="03" title="Analyze & Scale" text="Watch as our AI generates real-time P&L and growth forecasts automatically." />
+                </div>
               </div>
-              <div className="flex gap-3">
-                <button 
-                  onClick={() => scroll('left')}
-                  className="p-4 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-all shadow-sm border border-white/10 active:scale-90"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button 
-                  onClick={() => scroll('right')}
-                  className="p-4 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-all shadow-sm border border-white/10 active:scale-90"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </div>
-            </div>
-
-            <div 
-              ref={scrollRef}
-              className="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory scrollbar-hide no-scrollbar -mx-4 px-4"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {outcomes.map((outcome, idx) => (
-                <div 
-                  key={idx} 
-                  className="min-w-[300px] md:min-w-[420px] snap-start bg-white/5 p-10 rounded-[3rem] border border-white/10 hover:border-blue-500/50 transition-all duration-700 hover:bg-white/10 hover:shadow-2xl hover:shadow-blue-500/10 group"
-                >
-                  <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 border border-white/10 group-hover:scale-110 group-hover:-rotate-3 transition-transform">
-                    {React.cloneElement(outcome.icon as React.ReactElement<any>, { className: 'w-8 h-8' })}
-                  </div>
-                  <h3 className="text-xl font-black text-white mb-4 uppercase tracking-tight">{outcome.title}</h3>
-                  <p className="text-slate-400 font-medium text-sm leading-relaxed mb-6 italic opacity-80 group-hover:opacity-100 transition-opacity">"{outcome.desc}"</p>
-                  <div className="flex items-center gap-2 text-blue-400 font-black text-[10px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                    Outcome Verified <Check className="w-4 h-4" />
+              <div className="relative animate-reveal delay-200">
+                <div className="absolute -inset-10 bg-blue-100 rounded-[4rem] blur-[80px] opacity-40"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bbda48658a7d?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Business Analytics Visualization" 
+                  className="relative rounded-[3rem] shadow-2xl border border-slate-100 object-cover w-full aspect-square"
+                />
+                <div className="absolute -bottom-8 -left-8 glass p-6 rounded-3xl border border-white/20 shadow-2xl animate-float">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                      <TrendingUp className="text-white w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Growth Delta</p>
+                      <p className="text-xl font-black text-slate-900">+34% YOY</p>
+                    </div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Inventory Intelligence - IMAGE MADE LARGE AND FULL PICTURE VISIBLE */}
+        {/* Industry Verticals */}
+        <section id="verticals" className="py-24 bg-slate-50/30">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="text-center mb-16 animate-reveal">
+              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter">Tailored for your <span className="text-blue-600">industry.</span></h2>
+              <p className="text-slate-500 font-medium text-lg max-w-2xl mx-auto">Custom data models for the backbone of Indian commerce.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <VerticalCard 
+                img="https://images.unsplash.com/photo-1534723452862-4c874018d66d?auto=format&fit=crop&q=80&w=1000"
+                title="Kirana & FMCG"
+                icon={<Store className="w-5 h-5 text-white" />}
+                features={["Smart Inventory", "Expiry Alerts", "Credit Books"]}
+              />
+              <VerticalCard 
+                img="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&q=80&w=1000"
+                title="Pharmacy"
+                icon={<CheckCircle2 className="w-5 h-5 text-white" />}
+                features={["Batch Tracking", "Drug Schedule", "GST Compliance"]}
+              />
+              <VerticalCard 
+                img="https://images.unsplash.com/photo-1530124566582-a618bc2615ad?auto=format&fit=crop&q=80&w=1000"
+                title="Hardware"
+                icon={<Briefcase className="w-5 h-5 text-white" />}
+                features={["SKU Variations", "Bulk Orders", "Project Estimator"]}
+              />
+              <VerticalCard 
+                img="https://images.unsplash.com/photo-1454165833767-02a698d48769?auto=format&fit=crop&q=80&w=1000"
+                title="Services"
+                icon={<Briefcase className="w-5 h-5 text-white" />}
+                features={["Appointment Sync", "Invoice Builder", "Service History"]}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Inventory Intelligence */}
         <section id="inventory" className="py-24 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
              <div className="grid lg:grid-cols-2 gap-20 items-center">
                 <div className="relative group animate-reveal order-2 lg:order-1">
                    <div className="absolute -inset-10 bg-blue-600/5 rounded-[4rem] blur-[80px] group-hover:bg-blue-600/10 transition-colors"></div>
-                   <div className="relative bg-slate-50 p-4 rounded-[4rem] shadow-2xl border border-slate-100 overflow-hidden ring-1 ring-slate-900/5 flex items-center justify-center min-h-[500px]">
+                   <div className="relative bg-slate-50 p-6 rounded-[4rem] shadow-2xl border border-slate-100 overflow-hidden ring-1 ring-slate-900/5 flex items-center justify-center min-h-[500px]">
                       <img 
                         src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=1600" 
-                        alt="Inventory intelligence system showcase" 
+                        alt="Inventory Intelligence Dashboard" 
                         className="rounded-[3rem] w-full h-auto max-h-[600px] object-contain hover:scale-[1.03] transition-transform duration-1000 shadow-xl" 
                       />
                       <div className="absolute top-12 right-12 glass p-6 rounded-[2rem] border border-white/20 shadow-2xl animate-float">
@@ -355,8 +346,8 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                             <TrendingUp className="text-white w-5 h-5" />
                           </div>
                           <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Growth Engine</p>
-                            <p className="text-base font-black text-slate-900">+18.4% Efficiency</p>
+                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Efficiency</p>
+                            <p className="text-lg font-black text-slate-900">+18.4% Optimization</p>
                           </div>
                         </div>
                       </div>
@@ -367,7 +358,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                       <Database className="text-white w-6 h-6" />
                    </div>
                    <h3 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-[1] tracking-tighter">Stock linked to <br /><span className="text-gradient">Dynamic Margins.</span></h3>
-                   <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-10 font-medium max-w-lg">
+                   <p className="text-slate-600 text-lg leading-relaxed mb-10 font-medium max-w-lg">
                       Move beyond simple counts. Our intelligence engine automatically calculates your absolute net profit per unit—accounting for real-time GST, batch costs, and overheads.
                    </p>
                    <div className="space-y-5">
@@ -378,7 +369,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                    </div>
                    <div className="mt-12">
                       <button onClick={navigateToStreamlit} className="flex items-center gap-3 text-blue-600 font-black text-sm uppercase tracking-[0.2em] hover:translate-x-1 transition-transform group">
-                        Explore Inventory Intelligence <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        Explore Full Inventory OS <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </button>
                    </div>
                 </div>
@@ -386,74 +377,30 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
           </div>
         </section>
 
-        {/* NEW SECTION: Mobile Experience (Image Focused) */}
-        <section className="py-24 bg-slate-50/50">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="bg-slate-900 rounded-[4rem] overflow-hidden flex flex-col lg:flex-row items-center relative">
-              <div className="p-12 lg:p-20 lg:w-1/2 relative z-10 text-center lg:text-left">
-                <span className="text-blue-400 font-black text-[10px] uppercase tracking-[0.4em] mb-6 block">Native Mobile Experience</span>
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter leading-tight">Your business, <br />in your pocket.</h2>
-                <p className="text-slate-400 text-base md:text-lg mb-12 max-w-md font-medium leading-relaxed">
-                  Log sales while walking the floor. Check stock levels from the warehouse. View profit metrics while commuting. The power of a full ERP, stripped down to its most essential, fastest core.
-                </p>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                  <div className="px-6 py-4 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-3 group hover:bg-white hover:text-slate-900 transition-all cursor-default">
-                    <Smartphone className="w-6 h-6" />
-                    <span className="text-xs font-black uppercase tracking-widest">App Store</span>
-                  </div>
-                  <div className="px-6 py-4 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-3 group hover:bg-white hover:text-slate-900 transition-all cursor-default">
-                    <Zap className="w-6 h-6" />
-                    <span className="text-xs font-black uppercase tracking-widest">Play Store</span>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:w-1/2 flex justify-center items-end h-[400px] lg:h-[700px] relative">
-                <div className="absolute bottom-0 w-[280px] lg:w-[400px] aspect-[9/19] bg-slate-800 rounded-t-[3rem] border-[8px] border-slate-700 shadow-2xl relative overflow-hidden group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=1200" 
-                    alt="Mobile App Interface" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                  />
-                  {/* Mock Overlay UI */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-8">
-                    <div className="glass p-4 rounded-2xl border border-white/20 mb-4 animate-float">
-                      <p className="text-[10px] font-black text-white/50 uppercase tracking-widest mb-1">Today's Revenue</p>
-                      <p className="text-xl font-black text-white">₹42,850.00</p>
-                    </div>
-                  </div>
-                </div>
-                {/* Decorative floating dots/shapes around the phone */}
-                <div className="absolute top-1/2 right-12 w-20 h-20 bg-blue-500/20 rounded-full blur-2xl animate-pulse"></div>
-                <div className="absolute bottom-1/4 left-12 w-32 h-32 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-500"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* NEW SECTION: Testimonials */}
-        <section id="testimonials" className="py-24 bg-white">
+        {/* Testimonials */}
+        <section id="testimonials" className="py-24 bg-slate-50/20">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="text-center mb-16 animate-reveal">
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter">Loved by <span className="text-blue-600">thousands</span> of shops.</h2>
-              <p className="text-slate-500 font-medium text-sm md:text-base max-w-2xl mx-auto leading-relaxed">Real stories from real entrepreneurs scaling with BizSight AI.</p>
+              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter leading-none">Loved by <span className="text-blue-600">thousands.</span></h2>
+              <p className="text-slate-500 font-medium text-lg max-w-2xl mx-auto leading-relaxed">Real stories from real entrepreneurs scaling with BizSight AI.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               <TestimonialCard 
                 name="Rahul Sharma"
-                role="Owner, Sharma Hardware"
+                role="Sharma Hardware"
                 img="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
                 quote="The inventory tracking is a life-saver. I used to lose 5% of stock due to miscalculations. Now my accuracy is 100%."
               />
               <TestimonialCard 
                 name="Ananya Iyer"
-                role="Proprietor, Wellness Pharm"
+                role="Wellness Pharm"
                 img="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400"
-                quote="Being able to check my profit margins on my phone while travelling has changed how I run my shop. Truly indispensable."
+                quote="Being able to check my profit margins on my phone while travelling has changed how I run my shop. Indispensable."
               />
               <TestimonialCard 
                 name="Vikram Singh"
-                role="Director, Singh Superstores"
+                role="Singh Superstores"
                 img="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400"
                 quote="The AI predictions correctly warned us about a stockout during Diwali. We prepared in advance and doubled our sales."
               />
@@ -462,32 +409,32 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="py-24 bg-slate-50/50">
+        <section id="pricing" className="py-24 bg-white">
            <div className="max-w-5xl mx-auto px-4">
-              <div className="text-center mb-16 animate-reveal">
-                 <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tighter leading-none">Scale-ready pricing.</h2>
-                 <p className="text-slate-500 font-medium text-base">Simple plans designed for every stage of your business growth.</p>
+              <div className="text-center mb-20 animate-reveal">
+                 <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter leading-none">Simple, scale-ready pricing.</h2>
+                 <p className="text-slate-500 font-medium text-lg max-w-2xl mx-auto">Plans designed for the unique needs of modern Indian retail.</p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
                  <PricingCard 
                     tier="Basic" 
                     price="Free" 
                     desc="Perfect for local startups and side-hustles."
-                    features={["Up to 1,000 Transactions", "Basic Stock Tracker", "1 Admin Access", "Mobile App"]}
+                    features={["1,000 Transactions", "Stock Tracker", "1 Admin Access", "Mobile App"]}
                  />
                  <PricingCard 
                     tier="Business" 
                     price="₹1,499" 
                     desc="Everything needed for high-volume retail shops."
                     recommended
-                    features={["Unlimited Transactions", "AI Growth Engine", "GST Sync & Compliance", "24/7 Priority Support", "Batch Management"]}
+                    features={["Unlimited Transactions", "AI Growth Engine", "GST Sync", "24/7 Priority Support", "Batch Management"]}
                  />
                  <PricingCard 
                     tier="Enterprise" 
                     price="₹4,999" 
-                    desc="Strategic oversight for large store chains and networks."
-                    features={["API Access & Webhooks", "Custom BI Dashboard Connect", "Dedicated Account Lead", "Custom P&L Logic"]}
+                    desc="Strategic oversight for large store chains."
+                    features={["API Access", "Custom BI Connect", "Dedicated Lead", "Custom P&L Logic"]}
                  />
               </div>
            </div>
@@ -496,7 +443,7 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
         {/* Final CTA */}
         <section className="py-32 bg-slate-950 text-white text-center relative overflow-hidden">
            <div className="max-w-3xl mx-auto px-4 relative z-10 animate-reveal">
-              <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter leading-[1.05]">Ready to digitize <br />your business story?</h2>
+              <h2 className="text-4xl md:text-6xl font-black mb-12 tracking-tighter leading-[1.05]">Ready to digitize <br />your business story?</h2>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                  <button 
                   onClick={navigateToStreamlit}
@@ -509,50 +456,49 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                   target="_blank" 
                   className="text-white border border-white/20 px-12 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95"
                  >
-                    Contact Developer
+                    Contact Lead Developer
                  </a>
               </div>
            </div>
            
-           {/* Abstract Background for CTA */}
            <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
-             <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600 rounded-full blur-[200px]"></div>
-             <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-indigo-600 rounded-full blur-[200px]"></div>
+             <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-600 rounded-full blur-[200px]"></div>
+             <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-indigo-600 rounded-full blur-[200px]"></div>
            </div>
         </section>
       </main>
 
-      <footer className="bg-white pt-32 pb-16 border-t border-slate-100">
+      <footer className="bg-white pt-40 pb-20 border-t border-slate-100">
          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="grid md:grid-cols-4 gap-16 mb-24">
-               <div className="col-span-1 md:col-span-2 space-y-10">
+            <div className="grid md:grid-cols-4 gap-20 mb-32">
+               <div className="col-span-1 md:col-span-2 space-y-12">
                   <div className="flex items-center gap-4">
-                    <div className="p-2.5 bg-blue-600 rounded-2xl shadow-2xl shadow-blue-200 group-hover:scale-110 transition-transform">
-                        <BarChart3 className="text-white w-6 h-6" />
+                    <div className="p-3 bg-blue-600 rounded-2xl shadow-2xl shadow-blue-200">
+                        <BarChart3 className="text-white w-7 h-7" />
                     </div>
                     <span className="text-3xl font-black text-slate-900 tracking-tighter uppercase">BizSight AI</span>
                   </div>
-                  <p className="text-slate-500 max-w-md font-medium leading-relaxed text-lg">
-                     Architecting intelligent, high-performance financial infrastructure for the next generation of global SME leaders.
+                  <p className="text-slate-500 max-w-md font-medium leading-relaxed text-xl">
+                     Architecting the future of intelligent financial infrastructure for the next generation of global SME leaders.
                   </p>
                   
-                  {/* LOGO MADE LARGE AND FULL PICTURE VISIBLE - High Visibility Version */}
-                  <div className="flex flex-col gap-8 p-10 bg-slate-50 rounded-[3rem] border border-slate-100 max-w-lg group hover:bg-white transition-all hover:shadow-2xl hover:shadow-slate-300/40 border-2 border-slate-200/50">
-                    <span className="text-xs font-black text-blue-600 uppercase tracking-[0.6em] mb-1 block">Strategic Founding Engineer</span>
-                    <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-10 group/partner">
+                  {/* LOGO MADE LARGE AND FULL PICTURE VISIBLE - High Visibility Branding */}
+                  <div className="flex flex-col gap-10 p-12 bg-slate-50 rounded-[4rem] border border-slate-100 max-w-xl group hover:bg-white transition-all hover:shadow-2xl hover:shadow-slate-300/40 border-2 border-slate-200/50">
+                    <span className="text-xs font-black text-blue-600 uppercase tracking-[0.6em] mb-1 block">Strategic Engineering Partner</span>
+                    <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-12 group/partner">
                       <div className="relative">
-                        <div className="absolute -inset-6 bg-blue-600/10 rounded-[3rem] blur-2xl group-hover/partner:blur-3xl transition-all opacity-0 group-hover/partner:opacity-100"></div>
+                        <div className="absolute -inset-8 bg-blue-600/10 rounded-[3rem] blur-3xl group-hover/partner:blur-[4rem] transition-all opacity-0 group-hover/partner:opacity-100"></div>
                         <img 
                           src={BUILDER_LOGO} 
                           alt="Lead Developer - Sourish Dey" 
-                          className="relative h-40 w-40 rounded-[2.5rem] object-contain bg-white shadow-2xl shadow-blue-200 ring-4 ring-white group-hover/partner:scale-105 transition-transform duration-700 p-4" 
+                          className="relative h-48 w-48 rounded-[3rem] object-contain bg-white shadow-2xl shadow-blue-200 ring-8 ring-white group-hover/partner:scale-105 transition-transform duration-700 p-4" 
                         />
                       </div>
                       <div className="flex flex-col">
-                        <span className="text-3xl font-black text-slate-900 leading-tight">Sourish Dey</span>
-                        <span className="text-sm font-black text-slate-400 uppercase tracking-[0.3em] mt-3">Principal Product Lead</span>
-                        <div className="mt-8 flex items-center gap-3 text-sm font-black text-blue-600 uppercase tracking-tighter hover:gap-5 transition-all">
-                          Explore Master Portfolio <ArrowRight className="w-5 h-5" />
+                        <span className="text-4xl font-black text-slate-900 leading-tight">Sourish Dey</span>
+                        <span className="text-base font-black text-slate-400 uppercase tracking-[0.3em] mt-4">Principal Product Engineer</span>
+                        <div className="mt-10 flex items-center gap-4 text-base font-black text-blue-600 uppercase tracking-tighter hover:gap-6 transition-all">
+                          Explore Full Master Portfolio <ArrowRight className="w-6 h-6" />
                         </div>
                       </div>
                     </a>
@@ -560,36 +506,36 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                </div>
                
                <div>
-                  <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.4em] mb-10">Platform OS</h4>
-                  <ul className="space-y-6 text-slate-500 font-bold text-sm uppercase tracking-widest">
-                     <li><a href="#platform" className="hover:text-blue-600 transition-colors">Platform Capabilities</a></li>
-                     <li><a href="#verticals" className="hover:text-blue-600 transition-colors">Vertical Solutions</a></li>
-                     <li><a href="#inventory" className="hover:text-blue-600 transition-colors">Inventory Intelligence</a></li>
-                     <li><a href="#analytics" className="hover:text-blue-600 transition-colors">Growth Forecasting</a></li>
-                     <li><a href="#outcomes" className="hover:text-blue-600 transition-colors">Success Pillars</a></li>
+                  <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.4em] mb-12">Platform OS</h4>
+                  <ul className="space-y-8 text-slate-500 font-bold text-base uppercase tracking-widest">
+                     <li><a href="#platform" className="hover:text-blue-600 transition-colors">Core Features</a></li>
+                     <li><a href="#verticals" className="hover:text-blue-600 transition-colors">Verticals</a></li>
+                     <li><a href="#inventory" className="hover:text-blue-600 transition-colors">Inventory AI</a></li>
+                     <li><a href="#analytics" className="hover:text-blue-600 transition-colors">Analytics</a></li>
+                     <li><a href="#outcomes" className="hover:text-blue-600 transition-colors">Outcomes</a></li>
                   </ul>
                </div>
 
                <div>
-                  <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.4em] mb-10">Strategic Links</h4>
-                  <ul className="space-y-6 text-slate-500 font-bold text-sm uppercase tracking-widest">
+                  <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.4em] mb-12">Strategic Links</h4>
+                  <ul className="space-y-8 text-slate-500 font-bold text-base uppercase tracking-widest">
                      <li><a href={PORTFOLIO_URL} target="_blank" className="hover:text-blue-600 transition-colors">Developer Portal</a></li>
-                     <li><a href="#" className="hover:text-blue-600 transition-colors">Enterprise Compliance</a></li>
-                     <li><a href="#" className="hover:text-blue-600 transition-colors">Data Security Vault</a></li>
-                     <li><a href="#" className="hover:text-blue-600 transition-colors">Public Status</a></li>
-                     <li><a href="#" className="hover:text-blue-600 transition-colors">Technical Docs</a></li>
+                     <li><a href="#" className="hover:text-blue-600 transition-colors">Compliance</a></li>
+                     <li><a href="#" className="hover:text-blue-600 transition-colors">Security Vault</a></li>
+                     <li><a href="#" className="hover:text-blue-600 transition-colors">System Status</a></li>
+                     <li><a href="#" className="hover:text-blue-600 transition-colors">Tech Stack</a></li>
                   </ul>
                </div>
             </div>
 
-            <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-10">
-               <div className="flex items-center gap-8">
-                  <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.5em]">
-                    © 2026 BizSight AI Platform • Engineered in Bharat by
+            <div className="pt-16 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-12">
+               <div className="flex items-center gap-10">
+                  <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.6em] max-w-xs leading-loose">
+                    © 2026 BizSight AI Platform • Engineered in Bharat for the global market by Strategic Partners.
                   </p>
-                  <img src={BUILDER_LOGO} alt="Lead Partner" className="h-16 w-auto max-w-[160px] object-contain opacity-100 bg-slate-50 p-2 rounded-xl" />
+                  <img src={BUILDER_LOGO} alt="Lead Partner" className="h-20 w-auto max-w-[200px] object-contain opacity-100 bg-slate-50 p-3 rounded-2xl" />
                </div>
-               <div className="flex gap-12 text-[10px] font-black text-slate-400 uppercase tracking-[0.5em]">
+               <div className="flex gap-16 text-[11px] font-black text-slate-400 uppercase tracking-[0.6em]">
                   <a href="#" className="hover:text-slate-900 transition-colors">Privacy Charter</a>
                   <a href="#" className="hover:text-slate-900 transition-colors">Legal Terms</a>
                </div>
@@ -600,20 +546,36 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
   );
 };
 
+// Component helper for Workflow steps
+const WorkflowStep = ({ number, title, text }: { number: string, title: string, text: string }) => (
+  <div className="flex items-start gap-8 group">
+    <div className="flex flex-col items-center">
+      <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-xl font-black text-slate-300 group-hover:bg-blue-600 group-hover:text-white transition-all border border-slate-100 group-hover:scale-110 shadow-sm">
+        {number}
+      </div>
+      <div className="w-0.5 h-16 bg-slate-50 mt-2"></div>
+    </div>
+    <div className="pt-2">
+      <h4 className="text-xl font-black text-slate-900 mb-3 uppercase tracking-tighter">{title}</h4>
+      <p className="text-slate-500 font-medium leading-relaxed max-w-sm">{text}</p>
+    </div>
+  </div>
+);
+
 // Component helper for Industry Verticals
 const VerticalCard = ({ img, title, features, icon }: any) => (
-  <div className="group relative rounded-[2.5rem] overflow-hidden aspect-[4/5] shadow-xl hover:-translate-y-2 transition-all duration-700">
+  <div className="group relative rounded-[2.5rem] overflow-hidden aspect-[3/4] shadow-2xl hover:-translate-y-3 transition-all duration-700">
     <img src={img} alt={title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
-    <div className="absolute inset-0 p-8 flex flex-col justify-end">
-      <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mb-4 border border-white/20">
+    <div className="absolute inset-0 p-10 flex flex-col justify-end">
+      <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/20">
         {icon}
       </div>
-      <h3 className="text-xl font-black text-white mb-4 uppercase tracking-tighter">{title}</h3>
-      <ul className="space-y-2 mb-2">
+      <h3 className="text-2xl font-black text-white mb-6 uppercase tracking-tighter">{title}</h3>
+      <ul className="space-y-3 mb-2">
         {features.map((f: string) => (
-          <li key={f} className="flex items-center gap-2 text-[10px] font-black text-white/70 uppercase tracking-widest">
-            <Check className="w-3 h-3 text-blue-400" /> {f}
+          <li key={f} className="flex items-center gap-3 text-[10px] font-black text-white/80 uppercase tracking-widest">
+            <Check className="w-4 h-4 text-blue-400" /> {f}
           </li>
         ))}
       </ul>
@@ -623,83 +585,83 @@ const VerticalCard = ({ img, title, features, icon }: any) => (
 
 // Component helper for Testimonials
 const TestimonialCard = ({ name, role, img, quote }: any) => (
-  <div className="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 flex flex-col items-center text-center group hover:bg-white hover:shadow-2xl hover:shadow-blue-50 transition-all duration-700">
-    <div className="mb-8 relative">
-      <div className="absolute -inset-3 bg-blue-600/10 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <img src={img} alt={name} className="relative w-24 h-24 rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-105 transition-transform" />
-      <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
-        <Quote className="w-4 h-4 text-white fill-white" />
+  <div className="bg-slate-50 p-12 rounded-[4rem] border border-slate-100 flex flex-col items-center text-center group hover:bg-white hover:shadow-2xl hover:shadow-blue-50 transition-all duration-700">
+    <div className="mb-10 relative">
+      <div className="absolute -inset-4 bg-blue-600/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <img src={img} alt={name} className="relative w-28 h-28 rounded-full object-cover border-8 border-white shadow-2xl group-hover:scale-105 transition-transform" />
+      <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
+        <Quote className="w-5 h-5 text-white fill-white" />
       </div>
     </div>
-    <p className="text-slate-600 text-sm font-medium italic mb-8 leading-relaxed">"{quote}"</p>
+    <p className="text-slate-600 text-base font-medium italic mb-10 leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">"{quote}"</p>
     <div>
-      <h4 className="text-base font-black text-slate-900 tracking-tight uppercase">{name}</h4>
-      <p className="text-[10px] font-black text-blue-600 uppercase tracking-widest mt-1">{role}</p>
+      <h4 className="text-xl font-black text-slate-900 tracking-tighter uppercase">{name}</h4>
+      <p className="text-[10px] font-black text-blue-600 uppercase tracking-[0.4em] mt-2">{role}</p>
     </div>
   </div>
 );
 
 const FeatureCard = ({ icon, title, description, image }: { icon: React.ReactNode, title: string, description: string, image: string }) => (
-  <div className="bg-white rounded-[2.5rem] border border-slate-100 hover:border-blue-200 transition-all shadow-sm hover:shadow-2xl hover:shadow-blue-50/50 duration-700 group overflow-hidden flex flex-col">
-    <div className="h-48 w-full overflow-hidden relative">
+  <div className="bg-white rounded-[3rem] border border-slate-100 hover:border-blue-200 transition-all shadow-sm hover:shadow-2xl hover:shadow-blue-50/50 duration-700 group overflow-hidden flex flex-col h-full">
+    <div className="h-64 w-full overflow-hidden relative">
       <img src={image} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
-      <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
-      <div className="absolute bottom-6 left-8 w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-        {React.cloneElement(icon as React.ReactElement<any>, { className: 'w-6 h-6' })}
+      <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-80"></div>
+      <div className="absolute bottom-8 left-10 w-16 h-16 bg-white rounded-3xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+        {React.cloneElement(icon as React.ReactElement<any>, { className: 'w-8 h-8' })}
       </div>
     </div>
-    <div className="p-10 pt-4 text-left">
-      <h3 className="text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter">{title}</h3>
-      <p className="text-slate-500 leading-relaxed font-medium text-sm">{description}</p>
+    <div className="p-12 pt-6 text-left flex-1">
+      <h3 className="text-2xl font-black text-slate-900 mb-6 uppercase tracking-tighter">{title}</h3>
+      <p className="text-slate-500 leading-relaxed font-medium text-base">{description}</p>
     </div>
   </div>
 );
 
 const PricingCard = ({ tier, price, desc, features, recommended = false }: any) => (
-   <div className={`p-10 rounded-[3rem] border flex flex-col transition-all duration-700 relative group ${
+   <div className={`p-12 rounded-[4rem] border flex flex-col transition-all duration-700 relative group ${
       recommended ? 'bg-slate-950 border-slate-900 text-white shadow-2xl z-10 scale-105' : 'bg-white border-slate-100 text-slate-900 hover:border-blue-200 shadow-sm'
    }`}>
       {recommended && (
-         <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[8px] font-black uppercase tracking-[0.4em] px-4 py-2 rounded-full shadow-2xl animate-pulse">
+         <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-black uppercase tracking-[0.5em] px-6 py-2.5 rounded-full shadow-2xl animate-pulse">
             Enterprise Choice
          </span>
       )}
-      <p className={`text-[10px] font-black uppercase tracking-[0.4em] mb-4 ${recommended ? 'text-blue-400' : 'text-blue-600'}`}>{tier}</p>
-      <div className="flex items-end gap-1 mb-6">
-         <span className="text-4xl font-black tracking-tighter leading-none">{price}</span>
-         {price.includes('₹') && <span className={`font-black mb-1 text-xs ${recommended ? 'text-slate-500' : 'text-slate-400'}`}>/month</span>}
+      <p className={`text-[12px] font-black uppercase tracking-[0.5em] mb-6 ${recommended ? 'text-blue-400' : 'text-blue-600'}`}>{tier}</p>
+      <div className="flex items-end gap-2 mb-8">
+         <span className="text-5xl font-black tracking-tighter leading-none">{price}</span>
+         {price.includes('₹') && <span className={`font-black mb-1 text-sm ${recommended ? 'text-slate-500' : 'text-slate-400'}`}>/month</span>}
       </div>
-      <p className={`text-sm mb-10 leading-relaxed font-medium ${recommended ? 'text-slate-400' : 'text-slate-500'}`}>{desc}</p>
-      <ul className="space-y-5 mb-12 flex-1">
+      <p className={`text-base mb-12 leading-relaxed font-medium ${recommended ? 'text-slate-400' : 'text-slate-500'}`}>{desc}</p>
+      <ul className="space-y-6 mb-16 flex-1">
          {features.map((f: string) => (
-            <li key={f} className="flex items-center gap-3 text-xs font-black tracking-tight uppercase">
-               <Check className={`w-4 h-4 ${recommended ? 'text-blue-400' : 'text-emerald-500'}`} />
+            <li key={f} className="flex items-center gap-4 text-sm font-black tracking-tight uppercase">
+               <Check className={`w-5 h-5 ${recommended ? 'text-blue-400' : 'text-emerald-500'}`} />
                {f}
             </li>
          ))}
       </ul>
       <a 
          href={STREAMLIT_URL} 
-         className={`w-full py-5 rounded-2xl font-black transition-all text-center block text-xs uppercase tracking-widest active:scale-95 shadow-xl ${
+         className={`w-full py-6 rounded-3xl font-black transition-all text-center block text-sm uppercase tracking-widest active:scale-95 shadow-2xl ${
          recommended ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-slate-100 text-slate-900 hover:bg-blue-600 hover:text-white'
       }`}>
-         Activate {tier}
+         Activate {tier} OS
       </a>
    </div>
 );
 
 const CheckListItem = ({ text }: { text: string }) => (
-   <div className="flex items-center gap-4 text-sm md:text-base font-black text-slate-700 group cursor-default uppercase tracking-tight">
-      <div className="w-5 h-5 rounded-lg bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 transition-colors shadow-sm">
-         <Check className="w-3 h-3 text-blue-600 group-hover:text-white" />
+   <div className="flex items-center gap-5 text-base md:text-lg font-black text-slate-700 group cursor-default uppercase tracking-tight">
+      <div className="w-6 h-6 rounded-xl bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 transition-colors shadow-sm">
+         <Check className="w-4 h-4 text-blue-600 group-hover:text-white" />
       </div>
       {text}
    </div>
 );
 
 const MiniCard = ({ icon, label }: { icon: React.ReactNode, label: string }) => (
-   <div className="p-4 bg-white rounded-2xl border border-slate-100 shadow-sm flex items-center gap-4 hover:border-blue-200 hover:-translate-y-1 transition-all duration-300">
-      <div className="p-2 bg-slate-50 rounded-xl">{icon}</div>
-      <span className="text-[8px] font-black text-slate-900 uppercase tracking-widest">{label}</span>
+   <div className="p-5 bg-white rounded-3xl border border-slate-100 shadow-sm flex items-center gap-5 hover:border-blue-200 hover:-translate-y-2 transition-all duration-400">
+      <div className="p-3 bg-slate-50 rounded-2xl">{icon}</div>
+      <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest">{label}</span>
    </div>
 );
