@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import { User } from '../types';
 
+const BUILDER_LOGO = "https://res.cloudinary.com/dodhvvewu/image/upload/v1770584790/9783222e98b0d5141519b41e7203ff9a_pyjqit.webp";
+
 interface DashboardLayoutProps {
   user: User;
   onLogout: () => void;
@@ -145,6 +147,10 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ user, onLogout
           </div>
           
           <footer className="mt-12 py-6 border-t border-slate-100 flex flex-col items-center gap-2">
+            <div className="flex items-center gap-2 grayscale opacity-40">
+               <span className="text-[7px] font-black uppercase tracking-[0.2em] text-slate-500">Built by</span>
+               <img src={BUILDER_LOGO} alt="Builder Logo" className="h-3" />
+            </div>
             <p className="text-slate-400 text-[8px] font-black uppercase tracking-[0.2em]">
               © 2026 BizSight AI Platform • Intelligent Commerce
             </p>

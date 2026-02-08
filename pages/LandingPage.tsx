@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { 
   TrendingUp, 
@@ -30,6 +29,7 @@ import {
 } from 'lucide-react';
 import { User } from '../types';
 
+const BUILDER_LOGO = "https://res.cloudinary.com/dodhvvewu/image/upload/v1770584790/9783222e98b0d5141519b41e7203ff9a_pyjqit.webp";
 const STREAMLIT_URL = "https://bizsight-ai---business-intelligence-platform.streamlit.app/";
 const PORTFOLIO_URL = "https://sourishdeyportfolio.vercel.app/";
 
@@ -272,7 +272,6 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                   className="min-w-[280px] md:min-w-[340px] snap-start bg-slate-50/50 p-8 rounded-[2rem] border border-slate-100 hover:border-blue-200 transition-all duration-500 hover:bg-white hover:shadow-2xl hover:shadow-blue-50 group"
                 >
                   <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-slate-100 group-hover:scale-110 group-hover:-rotate-3 transition-transform">
-                    {/* Fix: Cast icon as ReactElement<any> to satisfy TypeScript about the className property */}
                     {React.cloneElement(outcome.icon as React.ReactElement<any>, { className: 'w-6 h-6' })}
                   </div>
                   <h3 className="text-base font-black text-slate-900 mb-3 uppercase tracking-tight">{outcome.title}</h3>
@@ -386,6 +385,10 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
                   <p className="text-slate-500 max-w-sm mb-5 font-medium leading-relaxed text-[9px]">
                      Building intelligent financial infrastructure for the next generation of entrepreneurs.
                   </p>
+                  <div className="flex items-center gap-2 mt-4">
+                    <span className="text-[7px] font-black text-slate-400 uppercase tracking-widest">Architected by</span>
+                    <img src={BUILDER_LOGO} alt="Builder Logo" className="h-4 w-4 rounded-sm object-contain opacity-50 hover:opacity-100 transition-opacity" />
+                  </div>
                </div>
                
                <div>
@@ -410,8 +413,9 @@ export const LandingPage: React.FC<{ user: User | null }> = ({ user }) => {
             <div className="pt-6 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-3">
                <div className="flex items-center gap-3">
                   <p className="text-[7px] text-slate-400 font-black uppercase tracking-[0.4em]">
-                    © 2026 BizSight AI • Engineered for Scale
+                    © 2026 BizSight AI • Engineered by
                   </p>
+                  <img src={BUILDER_LOGO} alt="Builder Logo" className="h-4 opacity-60 rounded-sm" />
                </div>
                <div className="flex gap-5 text-[7px] font-black text-slate-400 uppercase tracking-[0.4em]">
                   <a href="#" className="hover:text-slate-900 transition">Privacy</a>
